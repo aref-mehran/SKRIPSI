@@ -1,0 +1,35 @@
+PREPROCESSING
+case folding = lowercase/uppercase semua kata
+tokenization = memberikan token pada setiap kata (white space, line break, tanda baca)
+stopword removal = menghilangkan kata yang dianggap tidak penting (this, is, i, ...)
+stemming = mengubah kata menjadi kata dasar (fishing, fished, fisher) jadi (fish)
+
+SAMPLING
+membalancekan dataset (oversampling, undersampling)
+
+SPLITTING DATASET
+80/20, 60/40, 40/60, 20/80 (depends)
+
+FEATURE SELECTION
+Filter methods: Chi Square test, information gain, and correlation coefficient scores
+Wrapper methods: recursive feature elimination algorithm
+Embedded methods: Regularization algorithm (LASSO, Elastic Net, Ridge Regression)
+
+FEATURE EXTRACTION
+
+
+PEMBANGUNAN CLASSIFIER
+
+
+KLASIFIKASI
+
+
+EVALUASI SISTEM
+
+
+PART-OF-SPEECH TAG
+Mengelompokkan setiap kata kedalam verb, noun, adjective, conjunction, etc...
+
+
+http://machinelearningmastery.com/an-introduction-to-feature-selection/
+https://pdfs.semanticscholar.org/310e/a531640728702fce6c743c1dd680a23d2ef4.pdf

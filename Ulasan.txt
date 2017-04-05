@@ -1,0 +1,17 @@
+Big 5 Traits
+O (Openness): Artistic, curious, imaginative, etc.
+C (Conscientiousness): Efficient, organized, etc.
+E (Extraversion): Energetic, active, assertive, etc.
+A (Agreeableness): Compassionate, cooperative etc.
+N (Neuroticism): Anxious, tense, self-pitying, etc.
+
+Algorithm: Support Vector Machines (SVM), Simple Minimal Optimization (SMO), Boost Algorithms (MultiBoost AB and AdaBoostM1)
+
+Part-of-speech (POS) tag:
+
+Ban of n-gram:
+unigram, bigram, trigram
+
+Word vector:
+better performance (grouping similiar words)
+2 pendekatan (average word vectors, weighted average word vectors)
