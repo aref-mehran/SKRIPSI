@@ -1,5 +1,5 @@
 # SKRIPSI
-SKRIPSI-Personality Prediction System from Facebook using BIG 5 Personality
+Personality Prediction System from Facebook using BIG 5 Personality
 
 This is a Thesis project develop by Tommy Tandera and Hendro.
 Advisor : Derwin Suhartono 
