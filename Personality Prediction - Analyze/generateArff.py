@@ -1,9 +1,4 @@
-import json
-
 import arff
-
-import xml.etree.ElementTree as ET
-
 
 totalDataset = 250
 #Fb attribute = 7
@@ -16,7 +11,6 @@ def writeToArff():
     attributeFileName= r'Dataset\Personality Prediction\attributes.txt'
     attributes = open(attributeFileName).read()
     attribute = attributes.split('\n')
-    test = "test";
     
     #READ DATA_FB_FEATURES
     fbFeaturesFileName= r'Dataset\Personality Prediction\data_fb_features.txt'
@@ -48,10 +42,10 @@ def writeToArff():
         arffContent = arffContent + "\n" + "@DATA\n"
         for index in range(0, totalDataset):
             arffContent = arffContent + fbFeature[index] + "," + liwcFeature[index] + "," + spliceFeature[index] + "," + personalityClassResult[index] + "\n"
-            
+        
         resultFileName = open("Dataset\Personality Prediction\\dataset_" + personalityClass[datasetCounter] + ".arff", "w") #LIWC JSON result filename
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
     
-writeToArff() #Don't forget to change destination file, so it won't be replaced
+#writeToArff() #Don't forget to change destination file, so it won't be replaced

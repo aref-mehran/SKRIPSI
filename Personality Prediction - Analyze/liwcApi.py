@@ -50,7 +50,7 @@ def liwcPersonGet():
     print(result)
 
 def readLiwcResult():
-    liwcResultFileName= r'LIWC\LIWC Result.json' #Dataset filename
+    liwcResultFileName = r'LIWC\LIWC Result.json' #Dataset filename
     liwcResultJson = open(liwcResultFileName).read() #Read file
     liwcResult = json.loads(liwcResultJson)
         
