@@ -41,7 +41,7 @@ def build_data_frame(features, classification):
     data_frame = DataFrame(rows, index=index)
     return data_frame
 
-dset = arff.load(open('Dataset\Personality Prediction\Arff\All features\dataset_agreeableness.arff', 'rb'))
+dset = arff.load(open('Dataset\Personality Prediction\Arff\All features\dataset_neuroticism.arff', 'rb'))
 features = []
 classification = []
 labelEncoder = preprocessing.LabelEncoder()

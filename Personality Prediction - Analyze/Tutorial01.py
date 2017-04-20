@@ -6,7 +6,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.pipeline import Pipeline
 from sklearn.cross_validation import KFold
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, classification_report
 from sklearn.feature_extraction.text import TfidfTransformer
 
 NEWLINE = '\n'
@@ -113,8 +113,9 @@ for train_indices, test_indices in k_fold:
     predictions = pipeline.predict(test_text)
 
     confusion += confusion_matrix(test_y, predictions)
-    score = f1_score(test_y, predictions, pos_label=SPAM)
+    score = f1_score(test_y, predictions, pos_label=HAM)
     scores.append(score)
+    print classification_report(predictions, test_y)
 
 print('Total emails classified:', len(data))
 print('Score:', sum(scores)/len(scores))
