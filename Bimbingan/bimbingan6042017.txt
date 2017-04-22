@@ -1,0 +1,5 @@
+kutipan: nama belakang aja
+subbab tanggung antar halaman: enter aja
+detail teori dari masing-masing materi
+kutipan 5 tahun max
+dataset terbagi 5 (5 personality)
