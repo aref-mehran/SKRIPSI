@@ -1,0 +1,5 @@
+1. Machine Learning XGBoost
+2. Fokus ke CNN dan LSTM untuk novelty
+3. Open Vocabulary 
+4. Penulisan dipercepat
+5. Kalau bisa aplikasi dalam bentuk android

@@ -1,0 +1,43 @@
+openness
+125, 25, 5, 1000, 50
+loss: 0.103771%
+acc: 95.599999%
+
+conscientiousness
+125, 25, 5, 1000, 25
+loss: 0.242326%
+acc: 86.400000%
+
+extraversion
+125, 50, 25, 1000, 25
+loss: 0.380935%
+acc: 75.200000%
+
+agreeableness
+125, 50, 25, 1000, 50
+loss: 0.244913%
+acc: 85.200000%
+
+neuroticism
+125, 50, 25, 1000, 50
+loss: 0.137169%
+acc: 92.800000%
+
+
+
+
+
+openness, conscientiousness
+125, 25, 5, 1000, 25
+loss: 0.233266%		loss: 0.242326%
+acc: 93.600000%		acc: 86.400000%
+
+extraversion
+125, 50, 25, 1000, 25
+loss: 0.380935%
+acc: 75.200000%
+
+agreeableness, neuroticism
+125, 50, 25, 1000, 50	
+loss: 0.244913%		loss: 0.137169%
+acc: 85.200000%		acc: 92.800000%
