@@ -144,7 +144,7 @@ train = fetch_20newsgroups(random_state=1,
                            categories=categories,
                            )
 test = fetch_20newsgroups(random_state=1,
-                          subset='test',
+                          subset='test1',
                           categories=categories,
                           )
 #text = TextStats();
