@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Persona</title>
+
+	<link href="style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<script>
+		var URI_SAFE_LENGTH = 6000;
+		var userProfile = new Object();
+		var userStatusUpdate = [];
+		var userData = new Object();
+		
+		// This is called with the results from from FB.getLoginStatus().
+		function statusChangeCallback(response)
+		{
+			// The response object is returned with a status field that lets the
+			// app know the current login status of the person.
+			// Full docs on the response object can be found in the documentation
+			// for FB.getLoginStatus().
+			if (response.status === 'connected')
+			{
+				// Logged into your app and Facebook.
+				getUserProfile();
+				
+				if (document.getElementById("labelUserProfile") != null)
+				{
+					document.getElementById("labelUserProfile").innerHTML = "";
+					document.getElementById("labelUserProfile").style.visibility = "visible";
+				}
+				if (document.getElementById("imgUserPicture1") != null) document.getElementById("imgUserPicture1").style.visibility = "visible";
+				if (document.getElementById("linkAccessToken") != null) document.getElementById("linkAccessToken").style.visibility = "visible";
+				if (document.getElementById("labelAccessToken") != null) document.getElementById("labelAccessToken").style.visibility = "visible";
+				if (document.getElementById("textAccessToken") != null)
+				{
+					document.getElementById("textAccessToken").value = "";
+					document.getElementById("textAccessToken").style.visibility = "visible";
+				}
+				if (document.getElementById("buttonGetPosts") != null) document.getElementById("buttonGetPosts").style.visibility = "visible";
+				if (document.getElementById("labelUserPosts") != null)
+				{
+					document.getElementById("labelUserPosts").innerHTML = "";
+					document.getElementById("labelUserPosts").style.visibility = "visible";
+				}
+				if (document.getElementById("spinner") != null) document.getElementById("spinner").style.visibility = "hidden";
+			}
+			else
+			{
+				if (document.getElementById("labelUserProfile") != null) document.getElementById("labelUserProfile").style.visibility = "hidden";
+				if (document.getElementById("imgUserPicture1") != null) document.getElementById("imgUserPicture1").style.visibility = "hidden";
+				if (document.getElementById("linkAccessToken") != null) document.getElementById("linkAccessToken").style.visibility = "hidden";
+				if (document.getElementById("labelAccessToken") != null) document.getElementById("labelAccessToken").style.visibility = "hidden";
+				if (document.getElementById("textAccessToken") != null) document.getElementById("textAccessToken").style.visibility = "hidden";
+				if (document.getElementById("buttonGetPosts") != null) document.getElementById("buttonGetPosts").style.visibility = "hidden";
+				if (document.getElementById("labelUserPosts") != null) document.getElementById("labelUserPosts").style.visibility = "hidden";
+				if (document.getElementById("spinner") != null) document.getElementById("spinner").style.visibility = "hidden";
+			}
+		}
+
+		// This function is called when someone finishes with the Login
+		// Button.  See the onlogin handler attached to it in the sample
+		// code below.
+		function checkLoginState()
+		{
+			FB.getLoginStatus(function(response)
+			{
+				statusChangeCallback(response);
+			});
+		}
+
+		window.fbAsyncInit = function()
+		{
+			FB.init
+			({
+				appId      : '1428016273903210',
+				cookie     : true,  // enable cookies to allow the server to access 
+									// the session
+				xfbml      : true,  // parse social plugins on this page
+				version    : 'v2.9' // use graph api version 2.8
+			});
+
+			// Now that we've initialized the JavaScript SDK, we call 
+			// FB.getLoginStatus().  This function gets the state of the
+			// person visiting this page and can return one of three states to
+			// the callback you provide.  They can be:
+			//
+			// 1. Logged into your app ('connected')
+			// 2. Logged into Facebook, but not your app ('not_authorized')
+			// 3. Not logged into Facebook and can't tell if they are logged into
+			//    your app or not.
+			//
+			// These three cases are handled in the callback function.
+
+			FB.getLoginStatus(function(response)
+			{
+				statusChangeCallback(response);
+			});
+		};
+		
+		(function(d, s, id)
+		{
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		// Here we run a very simple test of the Graph API after login is
+		// successful.  See statusChangeCallback() for when this call is made.
+		function getUserProfile()
+		{
+			FB.api('/me', function(response)
+			{
+				//GET USER NAME
+				userProfile.user_id = response.id;
+				userProfile.user_name = response.name;
+				document.getElementById("labelUserProfile").innerHTML = 'Hello ' + response.name + '!';
+			});
+			
+			FB.api('/me/picture', function(response)
+			{
+				//GET USER PROFILE PICTURE
+				document.getElementById("imgUserPicture1").src = response.data['url'];
+			});
+		}
+		
+		function generateGUID()
+		{
+			function s4()
+			{
+				return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+			}
+			
+			return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+		}
+		
+		function getUserPosts(accessToken)
+		{
+			//GET USER STATUS UPDATES
+			document.getElementById("spinner").style.visibility = "visible";
+			document.getElementById("labelUserPosts").innerHTML = "Loading data, please wait...";
+			document.getElementById("labelUserPosts").style.color = "white";
+			document.getElementById("result").style.visibility = "visible";
+			
+			FB.api('/me/posts?limit=1000000&access_token='+accessToken, function(response)
+			{
+				document.getElementById("labelUserPosts").innerHTML = "";
+				
+				for (var i=0; i<response.data.length; i++)
+				{
+					if (response.data[i]['message'] != undefined)
+					{
+						userStatusUpdate.push(response.data[i]['message']);
+					}
+				}
+				userData.insert_id = generateGUID();
+				userData.user_id = userProfile.user_id;
+				userData.user_name = encodeURIComponent(userProfile.user_name);
+				userData.status_update = encodeURIComponent(userStatusUpdate);
+				
+				if (window.XMLHttpRequest)
+				{
+					// code for modern browsers
+					xmlhttp = new XMLHttpRequest();
+				}
+				else
+				{
+					// code for old IE browsers
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				
+				var baseUserPostsUri = "userPosts.php?insert_id="userData.insert_id+"&user_id="+userData.user_id+"&user_name="+userData.user_name+"&status_update=";
+				var startIndex = 0;
+				var endIndex = 0;
+				for (var i=0; i<Math.ceil(userData.status_update.length); i++)
+				{
+					startIndex = i * URI_SAFE_LENGTH;
+					endIndex = startIndex + URI_SAFE_LENGTH;
+					
+					var splitUserPostsUri = baseUserPostsUri + "" + userData.status_update.substring(startIndex, endIndex);
+					xmlhttp.open("GET", splitUserPostsUri, false);
+					xmlhttp.send();
+				}
+				if (userData.status_update.length == 0)
+				{
+					xmlhttp.open("GET", baseUserPostsUri, true);
+					xmlhttp.send();
+				}
+				
+				document.getElementById("labelUserPosts").innerHTML += "You have " + response.data.length + " posts.<br/>Thank you for participating!";
+				document.getElementById("result").style.visibility = "visible";
+				document.getElementById("spinner").style.visibility = "hidden";
+			});
+		}
+		
+		function checkUserPosts()
+		{
+			if (document.getElementById("textAccessToken").value != "")
+			{
+				var userPostsGranted = false;
+				var accessToken = document.getElementById("textAccessToken").value;
+				FB.api('/me/permissions?access_token='+accessToken, function(response)
+				{
+					document.getElementById("labelUserPosts").innerHTML = "";
+					
+					if (response.data == undefined)
+					{
+						document.getElementById("labelUserPosts").innerHTML = "Incorrect access token, please get your access token again.<br/>Follow the step-by-step guide.";
+						document.getElementById("labelUserPosts").style.color = "red";
+						document.getElementById("textAccessToken").value = "";
+						document.getElementById("textAccessToken").focus();
+						document.getElementById("result").style.visibility = "visible";
+					}
+					else
+					{
+						for (var i=0; i<response.data.length; i++)
+						{
+							if (response.data[i]['permission'] == "user_posts" && response.data[i]['status'] == "granted")
+							{
+								userPostsGranted = true;
+								i = response.data.length;
+								getUserPosts(accessToken);
+							}
+						}
+						
+						if (userPostsGranted == false)
+						{
+							document.getElementById("labelUserPosts").innerHTML = "Please get your access token again and check(✔) \"user_posts\" option.<br/>Follow the step-by-step guide.";
+							document.getElementById("labelUserPosts").style.color = "red";
+							document.getElementById("textAccessToken").value = "";
+							document.getElementById("textAccessToken").focus();
+							document.getElementById("result").style.visibility = "visible";
+						}
+					}
+				});
+			}
+			else
+			{
+				document.getElementById("labelUserPosts").innerHTML = "Please input your access token.<br/>Follow the step-by-step guide.";
+				document.getElementById("labelUserPosts").style.color = "red";
+				document.getElementById("textAccessToken").value = "";
+				document.getElementById("textAccessToken").focus();
+				document.getElementById("result").style.visibility = "visible";
+			}
+		}
+	</script>
+		
+	<div id="bg"></div>
+		<div class="wrapper">
+			<div class="content">
+				<form action="" >
+				<img src="./assets/logo.png" id ="logo" alt="Logo">
+					<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false" scope="public_profile,email,user_friends,user_posts" onlogin="checkLoginState();"></div>
+					<div id="labelUserProfile" style="visibility:hidden"></div>
+					<img id="imgUserPicture1" style="visibility:hidden">
+					<br/>
+					
+					<div class="statbox">
+						<a id="linkAccessToken" href="https://developers.facebook.com/tools/explorer" target="_blank" style="visibility:hidden">Get your access token here</a>
+						<div id="labelAccessToken" style="visibility:hidden">Input your access token</div>
+						
+						<div class="inputstat">
+							<input id="textAccessToken" type="text" style="visibility:hidden">
+							<button id="buttonGetPosts" type="button" style="visibility:hidden" onclick="checkUserPosts();">Get your status updates</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="result">
+				<div id="spinner" class="spinner" style="visibility:hidden"></div>
+				<div id="labelUserPosts"></div>
+			</div>
+		</div>
+</body>
+</html>

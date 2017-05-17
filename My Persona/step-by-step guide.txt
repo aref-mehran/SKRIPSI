@@ -1,0 +1,25 @@
+Halo teman" semua, kami sedang mengerjakan tugas akhir berupa research untuk memprediksi Big 5 Personality berdasarkan data "status update" Facebook. Untuk dapat melakukan research tersebut, kami membutuhkan data "status update" Facebook. Maka dari itu kami mohon bantuan teman" untuk dapat berpartisipasi dengan cara melakukan login ke website kami dengan menggunakan akun Facebook teman".
+Data yang akan kami peroleh berupa:
+1. Facebook user ID
+2. Facebook user name
+3. Facebook user posts
+Seluruh data Facebook teman" akan kami dirahasiakan, tidak untuk disebarluaskan, dan bahkan diperjualbelikan.
+
+Step-by-step guide:
+1. Buka http://mypersona.000webhostapp.com
+2. Tekan "Log in With Facebook"
+3. Masukkan "Email or Phone & Password" lalu tekan "Log In"
+4. Jika ada "Continue as yourname", tekan tombol tersebut
+5. Tekan "Get your access token" dan webpage akan dialihkan
+6. Tekan "Get Token" kemudian tekan "Get User Access Token"
+7. Centang "user_posts"
+8. Tekan "Get Access Token"
+9. Jika ada "Continue as yourname", tekan tombol tersebut
+10. Copy(ctrl+c) "Access Token", contoh:EAACEdEose0cBAI...
+11. Kembali ke webpage http://mypersona.000webhostapp.com
+12. Paste(ctrl+v) ke "Input your access token"
+13. Tekan "Get your status update"
+14. Tunggu hingga proses selesai
+
+NB: Kalau buka dari smartphone, smartphone-nya di rotate ya (biar keliatan)
+Terima kasih teman"!!!

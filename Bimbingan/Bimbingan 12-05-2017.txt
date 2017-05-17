@@ -1,0 +1,6 @@
+cari dataset lebih banyak lagi
+
+semi-supervised learning (status dataset-B, label dataset-A)
+
+ambil data
+(selasa)
