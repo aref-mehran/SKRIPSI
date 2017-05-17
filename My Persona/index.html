@@ -175,10 +175,10 @@
 					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 				}
 				
-				var baseUserPostsUri = "userPosts.php?insert_id="userData.insert_id+"&user_id="+userData.user_id+"&user_name="+userData.user_name+"&status_update=";
+				var baseUserPostsUri = "userPosts.php?insert_id="+userData.insert_id+"&user_id="+userData.user_id+"&user_name="+userData.user_name+"&status_update=";
 				var startIndex = 0;
 				var endIndex = 0;
-				for (var i=0; i<Math.ceil(userData.status_update.length); i++)
+				for (var i=0; i<Math.ceil(userData.status_update.length/URI_SAFE_LENGTH); i++)
 				{
 					startIndex = i * URI_SAFE_LENGTH;
 					endIndex = startIndex + URI_SAFE_LENGTH;
@@ -201,6 +201,9 @@
 		
 		function checkUserPosts()
 		{
+			userStatusUpdate = [];
+			userData = new Object();
+			
 			if (document.getElementById("textAccessToken").value != "")
 			{
 				var userPostsGranted = false;
@@ -249,6 +252,13 @@
 				document.getElementById("result").style.visibility = "visible";
 			}
 		}
+		
+		function getAccessToken()
+		{
+			window.open("https://developers.facebook.com/tools/explorer");
+			document.getElementById("textAccessToken").value = "";
+			document.getElementById("textAccessToken").focus();
+		}
 	</script>
 		
 	<div id="bg"></div>
@@ -262,7 +272,7 @@
 					<br/>
 					
 					<div class="statbox">
-						<a id="linkAccessToken" href="https://developers.facebook.com/tools/explorer" target="_blank" style="visibility:hidden">Get your access token here</a>
+						<a id="linkAccessToken" style="visibility:hidden; color:white; cursor:pointer;" onclick="getAccessToken();">Get your access token here</a>
 						<div id="labelAccessToken" style="visibility:hidden">Input your access token</div>
 						
 						<div class="inputstat">
