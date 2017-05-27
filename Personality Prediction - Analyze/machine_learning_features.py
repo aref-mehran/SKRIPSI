@@ -91,7 +91,8 @@ def train(dsetFilename, classifier):
     
         pipeline.fit(train_text, train_y)
         predictions = pipeline.predict(test_text)
-    
+        print (predictions)
+        print (test_y)
         confusion += confusion_matrix(test_y, predictions)
         precisionScore = precision_score(test_y, predictions, pos_label=1) #pos_label= (1=yes, 0=no)
         recallScore = recall_score(test_y, predictions, pos_label=1)

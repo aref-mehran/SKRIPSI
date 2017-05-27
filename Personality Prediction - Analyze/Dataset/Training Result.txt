@@ -1,0 +1,55 @@
+DEEP LEARNING (Input: Text)
+===========================
+---OPENNESS---
+MLP		val_loss: 0.89 - val_acc: 0.53	[66 61][57 66]
+CNN1D		val_loss: 0.70 - val_acc: 0.54	[55 72][43 80]
+LSTM 		val_loss: 0.67 - val_acc: 0.64
+Bi-LSTM		val_loss: 0.84 - val_acc: 0.56
+CNN LSTM	val_loss: 0.98 - val_acc: 0.68
+
+---CONSCIENTIOUSNESS---
+MLP		val_loss: 0.87 - val_acc: 0.51	[67 60][63 60]
+CNN1D		val_loss: 0.71 - val_acc: 0.47	[57 70][63 60]
+LSTM 		val_loss: 0.87 - val_acc: 0.46
+Bi-LSTM		val_loss: 1.22 - val_acc: 0.42
+CNN LSTM	val_loss: 1.01 - val_acc: 0.50
+
+---EXTRAVERSION---
+MLP		val_loss: 0.80 - val_acc: 0.56	[85 47][63 55]
+CNN1D		val_loss: 0.70 - val_acc: 0.50	[62 70][54 64]
+LSTM 		val_loss: 0.73 - val_acc: 0.58
+Bi-LSTM		val_loss: 1.21 - val_acc: 0.58
+CNN LSTM	val_loss: 0.98 - val_acc: 0.58
+
+---AGREEABLENESS---
+MLP		val_loss: 1.02 - val_acc: 0.43	[44 82][61 63]
+CNN1D		val_loss: 0.70 - val_acc: 0.50	[57 69][56 68]
+LSTM 		val_loss: 0.69 - val_acc: 0.50
+Bi-LSTM		val_loss: 0.88 - val_acc: 0.52
+CNN LSTM	val_loss: 0.82 - val_acc: 0.48
+
+---NEUROTICISM---
+MLP		val_loss: 1.00 - val_acc: 0.48	[74 56][74 46]
+CNN1D		val_loss: 0.70 - val_acc: 0.51	[69 61][62 58]
+LSTM 		val_loss: 0.78 - val_acc: 0.46
+Bi-LSTM		val_loss: 1.65 - val_acc: 0.46
+CNN LSTM	val_loss: 1.27 - val_acc: 0.54
+
+
+
+DEEP LEARNING (Input: Splice Features)
+======================================
+---OPENNESS---
+MLP			val_loss: 0.64 - val_acc: 0.70	[4  70][9  167]
+			
+---CONSCIENTIOUSNESS---
+MLP			val_loss: 0.70 - val_acc: 0.52	[52 68][54 76]
+			
+---EXTRAVERSION---
+MLP			val_loss: 0.68 - val_acc: 0.61	[142 12][91 5]
+			
+---AGREEABLENESS---
+MLP			val_loss: 0.72 - val_acc: 0.53	[47 69][59 75]
+			
+---NEUROTICISM---
+MLP			val_loss: 0.68 - val_acc: 0.59	[89 62][60 39]

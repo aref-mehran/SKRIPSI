@@ -1,0 +1,16 @@
+KESIMPULAN:
+Fmeasure > Accuracy jika kelas Positive > Negative
+Fmeasure < Accuracy jika kelas Positive < Negative
+*kecuali prediksi kelas mayoritas jumlahnya sangat sedikit (hampir setara dengan kelas minoritas)
+ dan prediksi kelas minoritas jumlahnya sangat banyak (hampir setara dengan kelas mayoritas)
+ contoh: Positive=900; Negative=100; prediksi Positive<100; prediksi Negative>900; maka Fmeasure < Accuracy
+ contoh: Positive=100; Negative=900; prediksi Positive>900; prediksi Negative<100; maka Fmeasure > Accuracy
+ jika prediksi kelas mayoritas jumlahnya sama banyak (setara dengan kelas minoritas)
+ dan prediksi kelas minoritas jumalhnya sama banyak (setara dengan kelas mayoritas)
+ contoh: Positive=900; Negative=100; prediksi Positive=100; prediksi Negative=900; maka Fmeasure = Accuracy
+ contoh: Positive=100; Negative=900; prediksi Positive=900; prediksi Negative=100; maka Fmeasure = Accuracy
+ 
+Fmeasure = Accuracy jika kelas Positive = Negative
+*kecuali
+ contoh: Positive=500; Negative=500; prediksi Positive<500; prediksi Negative>500; maka Fmeasure < Accuracy
+ contoh: Positive=500; Negative=500; prediksi Positive>500; prediksi Negative<500; maka Fmeasure > Accuracy

@@ -1,0 +1,68 @@
+import numpy
+from keras.models import Sequential
+from keras.layers import Dense
+# from keras.layers import Flatten
+# from keras.layers.embeddings import Embedding
+# from keras.layers import Dropout
+# from keras.layers import LSTM
+# from keras.layers import Conv1D, GlobalMaxPooling1D
+# from keras.layers import Activation
+
+# DATASET_FILENAME = "Dataset\Personality Prediction\Arff\Fb features\dataset_fb_features_openness.csv"
+DATASET_FILENAME = "Dataset\Personality Prediction\Arff\Splice features\dataset_splice_openness.csv"
+# DATASET_FILENAME = "Dataset\Personality Prediction\Arff\LIWC features\dataset_liwc_openness.csv"
+# DATASET_FILENAME = "Dataset\Personality Prediction\Arff\All features\dataset_openness.csv"
+# DATASET_FILENAME = "Dataset\Personality Prediction\Arff\dataset_openness.csv" #LIWC & Splice
+# DATASET_FILENAME = "Dataset\pima-indians-diabetes.csv"
+
+seed = 3
+numpy.random.seed(seed)
+TOTAL_DATASET = 250
+DELIMITER = ","
+total_features = 74
+index_class = total_features
+epochs = 1000
+batchSize = 25
+validation_split=0.2
+
+print ("Loading dataset")
+dataset = numpy.loadtxt(DATASET_FILENAME, delimiter=DELIMITER)
+data = dataset[:,0:total_features]
+labels = dataset[:,index_class]
+
+print("Splitting train/test")
+indices = numpy.arange(TOTAL_DATASET)
+numpy.random.shuffle(indices)
+data = data[indices]
+labels = labels[indices]
+val_sample = int(validation_split * len(data))
+
+x_train = data[:-val_sample]
+y_train = labels[:-val_sample]
+x_test = data[-val_sample:]
+y_test = labels[-val_sample:]
+# datasetPredict = numpy.loadtxt("Dataset\pima-indians-diabetes.csv", delimiter=DELIMITER)
+# predictData = datasetPredict[:,0:total_features]
+
+#Create model
+print ("Creating model")
+model = Sequential()
+model.add(Dense(125, init='uniform', input_dim=total_features, activation='relu'))
+model.add(Dense(25, init='uniform', activation='relu'))
+model.add(Dense(5, init='uniform', activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+print ("Compiling model")
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+print ("Training model")
+model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=epochs, batch_size=batchSize, verbose=2)
+
+# scores = model.evaluate(X, Y, batch_size=25, verbose=2)
+# print("\n\nEvaluating model")
+# print("%s: %f%%" % (model.metrics_names[0], scores[0]))
+# print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+# predictions = model.predict(X)
+# rounded = [round(x[0]) for x in predictions]
+# print("\nPredictions result")
+# print(rounded)

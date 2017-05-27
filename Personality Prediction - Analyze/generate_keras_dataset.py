@@ -26,10 +26,10 @@ def wordCount():
     #Manually generate json string to be saved as json file,
     #because countDatasetDict does not satisfy json's requirements
     jsonString = generateJsonString(countDatasetDict.most_common())
-    
-    resultFileName = open("Dataset\Personality Prediction\Keras\status_word_index.json", "w")
-    resultFileName.write(jsonString)
-    resultFileName.close
+    print countDatasetDict
+#     resultFileName = open("Dataset\Personality Prediction\Keras\status_word_index.json", "w")
+#     resultFileName.write(jsonString)
+#     resultFileName.close
     print ("Word Count complete")
 
 def encodeDataset():
@@ -65,5 +65,5 @@ def encodeDataset():
     resultFileName.close
     print ("Encode Dataset complete")
     
-# wordCount()
+wordCount()
 # encodeDataset()
