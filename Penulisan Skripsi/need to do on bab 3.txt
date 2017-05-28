@@ -1,6 +1,6 @@
 
 1. Tambahin pengambilan data yang buat sendiri sama pembagian personalitynya.
-2. Tambahin ss dan cara word-processing dari status
+2. Tambahin ss dan cara word-processing dari status, proses translatenya dll
 3. Tambahin sistem/flowchart buat pelabelan kepribadian sendiri
 4. Explain learning process using scikit learn.
 5. Buat flowchart proses machine learning.

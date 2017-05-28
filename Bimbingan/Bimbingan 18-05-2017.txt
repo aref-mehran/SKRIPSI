@@ -1,0 +1,2 @@
+ambil dataset lagi
+coba GloVe
