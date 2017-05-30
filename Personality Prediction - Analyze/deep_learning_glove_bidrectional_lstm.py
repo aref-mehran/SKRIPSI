@@ -58,7 +58,7 @@ texts = dataset.split('#SEPARATOR#') #Split Status Dataset by each user
 classPersonality = 'conscientiousness'
 classFilename = r'Dataset\Personality Prediction\Keras\Class\class_' + classPersonality + '.txt'
 labelClass = open(classFilename).read()
-labels.append(labelClass.split('\n'))
+labels = labelClass.split('\n')
 print('Found %s texts.' % len(texts))
 
 # finally, vectorize the text samples into a 2D integer tensor
