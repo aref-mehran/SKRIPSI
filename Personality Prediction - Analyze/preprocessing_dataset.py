@@ -2,15 +2,15 @@ import re
 import nltk
 from nltk.tag.stanford import StanfordNERTagger
 
-filename = r'Dataset\Personality Prediction\Dataset\chamndod\testing.txt'
+filename = r'Dataset\Personality Prediction\Dataset\MIX\MIX Status Dataset.txt'
 dset = open(filename).read()
 dataset = dset.split('#SEPARATOR#')
 
-st = StanfordNERTagger('Dataset/Personality Prediction/Dataset/Pre-Processing/Stanford NER Tagger/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz', 'Dataset/Personality Prediction/Dataset/Pre-Processing/Stanford NER Tagger/stanford-ner-2014-06-16/stanford-ner.jar')
+st = StanfordNERTagger('Dataset/Personality Prediction/Dataset/Preprocessing/Stanford NER Tagger/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz', 'Dataset/Personality Prediction/Dataset/Preprocessing/Stanford NER Tagger/stanford-ner-2014-06-16/stanford-ner.jar')
 
 print ("Start Pre-processing Dataset")
 for i in range(0, len(dataset)):
-    print ("Dataset-" + str(i+1))
+    print ("Dataset-" + str(i+1) + " of " + str(len(dataset)))
     dataset[i] = dataset[i].replace("*PROPNAME*", "") # Remove *PROPNAME*
     dataset[i] = re.sub(r"http\S+", "", dataset[i]) # Remove URLs
     dataset[i] = re.sub("[^a-zA-Z ']", "", dataset[i]) # Remove All Symbols except (single quote), Numbers, Punctuations
@@ -36,10 +36,13 @@ for i in range(0, len(dataset)):
 #     dataset[i] = result
 print ("Finish Pre-processing Dataset")
     
-resultFileName = open("Dataset\Personality Prediction\Dataset\chamndod\preprocessing_testing.txt", "w") #LIWC JSON result filename
+resultFileName = open("Dataset\Personality Prediction\Dataset\MIX\Preprocessing\preprop_MIX_no_stemming.txt", "w")
 resultPreprocessing = ""
 for i in range(0, len(dataset)):
-    resultPreprocessing += dataset[i] + "#SEPARATOR#"
+    if (i < len(dataset)-1):
+        resultPreprocessing += dataset[i] + "#SEPARATOR#"
+    else:
+        resultPreprocessing += dataset[i]
 resultFileName.write(resultPreprocessing)
 resultFileName.close
 print ("Pre-processing Dataset has been saved")

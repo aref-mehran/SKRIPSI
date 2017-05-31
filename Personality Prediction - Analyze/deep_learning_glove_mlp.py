@@ -51,13 +51,14 @@ print('Found %s word vectors.' % len(embeddings_index))
 print('Processing text dataset')
 texts = []  # list of text samples
 labels = []  # list of label ids
+# datasetFilename = r'Dataset\Personality Prediction\Dataset\myPersonality\Preprocessing\preprop_myPersonality_no_stemming.txt' #Dataset filename
 datasetFilename = r'Dataset\Personality Prediction\Keras\status_dataset.txt' #Dataset filename
 dataset = open(datasetFilename).read() #Read file
 texts = dataset.split('#SEPARATOR#') #Split Status Dataset by each user
-classPersonality = 'conscientiousness'
+classPersonality = 'agreeableness'
 classFilename = r'Dataset\Personality Prediction\Keras\Class\class_' + classPersonality + '.txt'
 labelClass = open(classFilename).read()
-labels.append(labelClass.split('\n'))
+labels = labelClass.split('\n')
 print('Found %s texts.' % len(texts))
 
 # finally, vectorize the text samples into a 2D integer tensor
