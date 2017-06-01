@@ -1,14 +1,3 @@
-'''This script loads pre-trained word embeddings (GloVe embeddings)
-into a frozen Keras Embedding layer, and uses it to
-train a text classification model on the 20 Newsgroup dataset
-(classication of newsgroup messages into 20 different categories).
-GloVe embedding data can be found at:
-http://nlp.stanford.edu/data/glove.6B.zip
-(source page: http://nlp.stanford.edu/projects/glove/)
-20 Newsgroup data can be found at:
-http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-20/www/data/news20.html
-'''
-
 from __future__ import print_function
 
 import os
@@ -54,7 +43,7 @@ labels = []  # list of label ids
 datasetFilename = r'Dataset\Personality Prediction\Keras\status_dataset.txt' #Dataset filename
 dataset = open(datasetFilename).read() #Read file
 texts = dataset.split('#SEPARATOR#') #Split Status Dataset by each user
-classPersonality = 'conscientiousness'
+classPersonality = 'openness'
 classFilename = r'Dataset\Personality Prediction\Keras\Class\class_' + classPersonality + '.txt'
 labelClass = open(classFilename).read()
 labels = labelClass.split('\n')
@@ -112,7 +101,7 @@ model = Sequential()
 model.add(embedding_layer)
 model.add(GRU(32, dropout=0.2, recurrent_dropout=0.2))
 model.add(Dense(2, activation='softmax'))
-model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy', 'mse', 'mae'])
 
 model.fit(x_train, y_train, batch_size=32, epochs=10, validation_data=(x_test, y_test), verbose=2)
 

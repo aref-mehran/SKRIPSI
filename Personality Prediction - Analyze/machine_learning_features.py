@@ -5,7 +5,7 @@ from pandas import DataFrame
 from sklearn import preprocessing
 from sklearn.pipeline import Pipeline
 from sklearn.cross_validation import KFold
-from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_score, accuracy_score, roc_auc_score, mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import classification_report, confusion_matrix, f1_score, precision_score, recall_score, accuracy_score, roc_auc_score, mean_absolute_error, mean_squared_error, r2_score
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB
 from sklearn.svm import SVC, NuSVC, LinearSVC
@@ -16,9 +16,10 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier,
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.feature_selection import SelectKBest, chi2
 
-TOTAL_DATASET = 250
-total_features = 170
-index_class = 170
+TOTAL_DATASET = 389
+total_features = 74
+index_class = 74
+# FB_Features=7; LIWC=85; Splice=74
 
 class GetFeatures(TransformerMixin):
     def transform(self, features):
@@ -43,6 +44,8 @@ def build_data_frame(features, classification):
     return data_frame
 
 def train(dsetFilename, classifier):
+    numpy.random.seed(8)
+    
     dset = arff.load(open(dsetFilename, 'rb'))
     features = []
     classification = []
@@ -83,25 +86,22 @@ def train(dsetFilename, classifier):
     for train_indices, test_indices in k_fold:
         print ("kFold-" + str(foldIndex))
         foldIndex = foldIndex + 1
-        train_text = data.iloc[train_indices]['features'].values
-        train_y = data.iloc[train_indices]['class'].values
-        
-        test_text = data.iloc[test_indices]['features'].values
-        test_y = data.iloc[test_indices]['class'].values
+        x_train = data.iloc[train_indices]['features'].values
+        y_train = data.iloc[train_indices]['class'].values
+        x_test = data.iloc[test_indices]['features'].values
+        y_test = data.iloc[test_indices]['class'].values
     
-        pipeline.fit(train_text, train_y)
-        predictions = pipeline.predict(test_text)
-        print (predictions)
-        print (test_y)
-        confusion += confusion_matrix(test_y, predictions)
-        precisionScore = precision_score(test_y, predictions, pos_label=1) #pos_label= (1=yes, 0=no)
-        recallScore = recall_score(test_y, predictions, pos_label=1)
-        accuracyScore = accuracy_score(test_y, predictions)
-        f1Score = f1_score(test_y, predictions, pos_label=1)
-        rocAucScore = roc_auc_score(test_y, predictions)
-        maeScore = mean_absolute_error(test_y, predictions)
-        mseScore = mean_squared_error(test_y, predictions)
-        r2Score = r2_score(test_y, predictions)
+        pipeline.fit(x_train, y_train)
+        predictions = pipeline.predict(x_test)
+        confusion += confusion_matrix(y_test, predictions)
+        precisionScore = precision_score(y_test, predictions, pos_label=1) #pos_label= (1=yes, 0=no)
+        recallScore = recall_score(y_test, predictions, pos_label=1)
+        accuracyScore = accuracy_score(y_test, predictions)
+        f1Score = f1_score(y_test, predictions, pos_label=1)
+        rocAucScore = roc_auc_score(y_test, predictions)
+        maeScore = mean_absolute_error(y_test, predictions)
+        mseScore = mean_squared_error(y_test, predictions)
+        r2Score = r2_score(y_test, predictions)
         
         precision_scores.append(precisionScore)
         recall_scores.append(recallScore)
@@ -113,8 +113,8 @@ def train(dsetFilename, classifier):
         r2_scores.append(r2Score)
     
     trainResult = ''
-    trainResult += 'Filename:' + dsetFilename + '\n'
-    trainResult += 'Classifier:' + str(classifier) + '\n'
+#     trainResult += 'Filename: ' + dsetFilename + '\n'
+    trainResult += 'Classifier: ' + str(classifier) + '\n'
     trainResult += 'Confusion Matrix:\n' + str(confusion) + '\n'
     trainResult += 'Precision: ' + str(sum(precision_scores)/len(precision_scores)) + '\n'
     trainResult += 'Recall: ' + str(sum(recall_scores)/len(recall_scores)) + '\n'
@@ -128,15 +128,18 @@ def train(dsetFilename, classifier):
     
     return trainResult
 
-# total_features = 7
-# index_class = 7
-dsetFilename = "Dataset\Personality Prediction\Arff\All features\dataset_openness.arff"
-classifier = [GaussianNB(), BernoulliNB(), LinearSVC(), LogisticRegression(), DecisionTreeClassifier(), KNeighborsClassifier(), RandomForestClassifier(), GradientBoostingClassifier(), AdaBoostClassifier(), LinearDiscriminantAnalysis()]
-trainResult = ""
-for clsfier in classifier:
-     trainResult += train(dsetFilename, clsfier)
+traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
+# traits = ['conscientiousness']
+classifiers = [GaussianNB(), BernoulliNB(), LinearSVC(), LogisticRegression(), DecisionTreeClassifier(), KNeighborsClassifier(), RandomForestClassifier(), GradientBoostingClassifier(), AdaBoostClassifier(), LinearDiscriminantAnalysis()]
+# classifiers = [GaussianNB()]
+for trait in traits:
+    dsetFilename = "Dataset\Personality Prediction\Dataset\mix\Machine Learning\Arff\Splice\mix_"+trait+"_dataset.arff"
+    trainResult = ""
+    for classifier in classifiers:
+         trainResult += train(dsetFilename, classifier)
 
-# resultFileName = open("Dataset\Personality Prediction\Training Result.txt", "w")
-# resultFileName.write(trainResult)
-# resultFileName.close
+#     resultFileName = open("Dataset/Personality Prediction/Dataset/mix/Machine Learning/Arff/Splice/Training Result/Without Preprocessing/Without Resampling/training_result_"+trait+".txt", "w")
+#     resultFileName.write(trainResult)
+#     resultFileName.close
+print("All training result has been saved.")
 print(trainResult)

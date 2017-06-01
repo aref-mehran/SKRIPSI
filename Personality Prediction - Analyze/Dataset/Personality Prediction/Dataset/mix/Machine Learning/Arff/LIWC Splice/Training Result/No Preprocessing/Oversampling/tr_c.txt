@@ -1,0 +1,155 @@
+Classifier: GaussianNB(priors=None)
+Confusion Matrix:
+[[ 21 182]
+ [ 14 172]]
+Precision: 0.489351782293
+Recall: 0.928918128655
+Accuracy: 0.495951417004
+F1 Measure: 0.63462987013
+ROC AUC: 0.520158103592
+MAE: 0.504048582996
+MSE: 0.504048582996
+R2: -1.07437823726
+
+Classifier: BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True)
+Confusion Matrix:
+[[ 84 119]
+ [ 61 125]]
+Precision: 0.512505909603
+Recall: 0.672809106099
+Accuracy: 0.537112010796
+F1 Measure: 0.574843744834
+ROC AUC: 0.542204442265
+MAE: 0.462887989204
+MSE: 0.462887989204
+R2: -0.902972558207
+
+Classifier: LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0)
+Confusion Matrix:
+[[106  97]
+ [ 95  91]]
+Precision: 0.439752639288
+Recall: 0.497438387636
+Accuracy: 0.506072874494
+F1 Measure: 0.444266519335
+ROC AUC: 0.518557866587
+MAE: 0.493927125506
+MSE: 0.493927125506
+R2: -1.0289338019
+
+Classifier: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+Confusion Matrix:
+[[103 100]
+ [ 74 112]]
+Precision: 0.531000690131
+Recall: 0.604147869674
+Accuracy: 0.55290148448
+F1 Measure: 0.558110338712
+ROC AUC: 0.557703625005
+MAE: 0.44709851552
+MSE: 0.44709851552
+R2: -0.833282000291
+
+Classifier: DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')
+Confusion Matrix:
+[[112  91]
+ [ 83 103]]
+Precision: 0.532453279939
+Recall: 0.554662698413
+Accuracy: 0.552159244265
+F1 Measure: 0.534308650461
+ROC AUC: 0.552423690567
+MAE: 0.447840755735
+MSE: 0.447840755735
+R2: -0.841441920017
+
+Classifier: KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')
+Confusion Matrix:
+[[ 91 112]
+ [ 82 104]]
+Precision: 0.491082682552
+Recall: 0.573854427736
+Accuracy: 0.501282051282
+F1 Measure: 0.51719995186
+ROC AUC: 0.515224133704
+MAE: 0.498717948718
+MSE: 0.498717948718
+R2: -1.04887858233
+
+Classifier: RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_split=1e-07, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            n_estimators=10, n_jobs=1, oob_score=False, random_state=None,
+            verbose=0, warm_start=False)
+Confusion Matrix:
+[[142  61]
+ [ 96  90]]
+Precision: 0.606367416124
+Recall: 0.487261904762
+Accuracy: 0.596828609987
+F1 Measure: 0.532196541002
+ROC AUC: 0.591815834877
+MAE: 0.403171390013
+MSE: 0.403171390013
+R2: -0.654812338818
+
+Classifier: GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=100, presort='auto', random_state=None,
+              subsample=1.0, verbose=0, warm_start=False)
+Confusion Matrix:
+[[125  78]
+ [ 86 100]]
+Precision: 0.567255111022
+Recall: 0.535104427736
+Accuracy: 0.578609986505
+F1 Measure: 0.543316569305
+ROC AUC: 0.572864080491
+MAE: 0.421390013495
+MSE: 0.421390013495
+R2: -0.732027714213
+
+Classifier: AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None)
+Confusion Matrix:
+[[122  81]
+ [ 85 101]]
+Precision: 0.552146805551
+Recall: 0.546195697577
+Accuracy: 0.573414304993
+F1 Measure: 0.543118575893
+ROC AUC: 0.569721391341
+MAE: 0.426585695007
+MSE: 0.426585695007
+R2: -0.752047346627
+
+Classifier: LinearDiscriminantAnalysis(n_components=None, priors=None, shrinkage=None,
+              solver='svd', store_covariance=False, tol=0.0001)
+Confusion Matrix:
+[[114  89]
+ [ 81 105]]
+Precision: 0.542865654652
+Recall: 0.570040726817
+Accuracy: 0.56302294197
+F1 Measure: 0.548966450566
+ROC AUC: 0.567927077658
+MAE: 0.43697705803
+MSE: 0.43697705803
+R2: -0.796213831681
+

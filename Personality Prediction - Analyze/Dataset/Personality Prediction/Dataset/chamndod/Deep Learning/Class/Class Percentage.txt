@@ -1,0 +1,26 @@
+TOTAL INSTANCES: 139
+
+OPENNESS
+Yes: 87 (62.59%)
+No : 52  (37.41%)
+Yes : No (1.67 : 1)
+
+CONSCIENTIOUSNESS
+Yes: 56 (40.29%)
+No : 83 (59.71%)
+Yes : No (1 : 1.48)
+
+EXTRAVERSION
+Yes: 34  (24.46%)
+No : 105 (75.54%)
+Yes : No (1 : 3.09)
+
+AGREEABLENESS
+Yes: 75 (53.96%)
+No : 64  (46.04%)
+Yes : No (1.17 : 1)
+
+NEUROTICISM
+Yes: 49  (35.25%)
+No : 90 (64.75%)
+Yes : No (1 : 1.84)

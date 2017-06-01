@@ -2,7 +2,7 @@ import re
 import nltk
 from nltk.tag.stanford import StanfordNERTagger
 
-filename = r'Dataset\Personality Prediction\Dataset\MIX\MIX Status Dataset.txt'
+filename = r'Dataset\Personality Prediction\Dataset\MIX\mix_status_dataset.txt'
 dset = open(filename).read()
 dataset = dset.split('#SEPARATOR#')
 
@@ -36,7 +36,7 @@ for i in range(0, len(dataset)):
 #     dataset[i] = result
 print ("Finish Pre-processing Dataset")
     
-resultFileName = open("Dataset\Personality Prediction\Dataset\MIX\Preprocessing\preprop_MIX_no_stemming.txt", "w")
+resultFileName = open("Dataset\Personality Prediction\Dataset\MIX\Preprocessing\preprop_mix_no_stemming.txt", "w")
 resultPreprocessing = ""
 for i in range(0, len(dataset)):
     if (i < len(dataset)-1):

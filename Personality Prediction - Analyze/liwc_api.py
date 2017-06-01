@@ -2,16 +2,16 @@ import requests
 import uuid
 import json
 
-receptivitiApiSecretKey = "1DRZXuYw5YRrc4kFSYi4BKrhy6e4ogiuU0DBbNlIYy0"
-receptivitiApiKey = "58d6f24ae53b0b05af52cd7c"
-receptivitiName = "hendro-tommy" #Unique name for Receptiviti's user
+receptivitiApiSecretKey = "eFr0mf8T7wx4Ns98wd21s6zuHewp4WC33nwzHgmt3Jg"
+receptivitiApiKey = "592d6f09bf893305d37bf93d"
+receptivitiName = "hendro ndod" #Unique name for Receptiviti's user
 receptivitiGender = 2 #0=Undefined, 1=Female, 2=Male
 contentLanguage = "english"
 contentSource = 4 #4=Media Social (Except Twitter)
-totalDataset = 250
+totalDataset = 389
 
 def liwcPersonPost(): #liwcPersonPost run once, the data will be saved in Receptiviti
-    statusFileName = r'LIWC\LIWC Status Dataset Edited.txt' #Dataset filename
+    statusFileName = r'Dataset\Personality Prediction\Dataset\mix\mix_status_dataset.txt' #Dataset filename
     liwcStatusDset = unicode(open(statusFileName).read(), errors='ignore') #Read file
     liwcStatusDataset = liwcStatusDset.split('#SEPARATOR#') #Split LIWC Status Dataset by each user
     
@@ -35,7 +35,7 @@ def liwcPersonPost(): #liwcPersonPost run once, the data will be saved in Recept
         print("Complete analysis user-" + str(index+1) + "...")    
     print("Complete analysis all user")
     
-    resultFileName = open("LIWC\LIWC Result.json", "w") #LIWC JSON result filename
+    resultFileName = open("Dataset\Personality Prediction\Dataset\mix\Features\LIWC\mix_liwc.json", "w") #LIWC JSON result filename
     resultFileName.write(json.dumps(result).replace("\"", "").replace("\\", "\""))
     resultFileName.close
 
@@ -49,19 +49,31 @@ def liwcPersonGet():
     result = response.text
     print(result)
 
-def readLiwcResult():
-    liwcResultFileName = r'LIWC\LIWC Result.json' #Dataset filename
+def saveLiwcData():
+    liwcResultFileName = r'Dataset\Personality Prediction\Dataset\mix\Features\LIWC\mix_liwc.json' #Dataset filename
     liwcResultJson = open(liwcResultFileName).read() #Read file
     liwcResult = json.loads(liwcResultJson)
-        
-    for index in range(0, totalDataset): #Looping All LIWC Status Dataset by each user
-        print("LIWC result user-" + str(index+1) + ":")
-        print("sixLtr:" + str(liwcResult[index]["contents"][0]["liwc_scores"]["sixLtr"]) + "\n" + 
-              "wc:" + str(liwcResult[index]["contents"][0]["liwc_scores"]["wc"]) + "\n" + 
-              "wps:" + str(liwcResult[index]["contents"][0]["liwc_scores"]["wps"]) + "\n" + 
-              "dic:" + str(liwcResult[index]["contents"][0]["liwc_scores"]["dic"]) + "\n" +
-               str(liwcResult[index]["contents"][0]["liwc_scores"]["categories"]) + "\n")
     
-#liwcPersonPost() #Don't forget to change destination file, so it won't be replaced
-#liwcPersonGet() #Not used
-readLiwcResult()
+    liwcAttributes = []
+    for key in liwcResult[0]["contents"][0]["liwc_scores"]["categories"]:
+        liwcAttributes.append(key)
+    
+    liwcData = ""
+    for i in range(0, totalDataset): #Looping All LIWC Status Dataset by each user
+        print("LIWC-" + str(i+1) + " of " + str(totalDataset))
+        for j in range(0, len(liwcAttributes)):
+            if (j < len(liwcAttributes)-1):
+                liwcData += str(liwcResult[i]["contents"][0]["liwc_scores"]["categories"][liwcAttributes[j]]) + ","
+            else:
+                liwcData += str(liwcResult[i]["contents"][0]["liwc_scores"]["categories"][liwcAttributes[j]])
+        if (i < totalDataset-1):
+            liwcData += "\n"
+    
+    liwcDataFilename = open("Dataset\Personality Prediction\Dataset\mix\Features\LIWC\mix_liwc_data.txt", "w")
+    liwcDataFilename.write(liwcData)
+    liwcDataFilename.close
+    print("LIWC data has been saved.")
+        
+# liwcPersonPost() #Don't forget to change destination file, so it won't be replaced
+# liwcPersonGet() #Not used
+saveLiwcData()
