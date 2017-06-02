@@ -1,0 +1,169 @@
+@CHARSET "ISO-8859-1";
+
+a {
+	color: #000080;
+}
+
+a:hover {
+	color: #0000FF;
+}
+
+.analysisDescription {
+	margin: 0;
+}
+
+.analysisKey {
+	margin: 10px 0 0 0;
+}
+
+body
+{
+	background-color:#DDDDDD;	
+}
+
+.botLogos {
+	margin: 0 auto 0 auto;
+	width: 830px;
+}
+
+.category {
+	margin: 30px 0 0 0;
+}
+
+.citerlogobot {
+	border: 0px;
+	height: 60px;		
+}
+
+.cmilogo {
+	border: 0px;
+	margin: 20px 0 0 0;
+}
+
+.cmilogobot {
+	border: 0px;
+	height: 60px;
+	margin: 0 auto 0 auto;
+
+}
+
+.content {
+	background-color: #FFFFFF; 
+	margin: 0 auto 0 auto;
+	padding: 15px;
+	width: 800px;
+}
+
+.description {
+	font-style: italic;
+	margin: 0;
+}
+
+.ellerlogobot {
+	border: 0px;
+	height: 60px;
+	margin: 20px 0 0 410px;
+}
+
+.error {
+	background-color: #FF0000;
+	margin: 10px;
+	padding: 5px;
+}
+
+h2
+{
+color:#CC0033;
+}
+
+h3
+{
+	border-bottom: 1px solid #CC0033;
+	color:#CC0033;
+}
+
+h4
+{
+color:#000080;
+}
+
+.footer {
+	background-color: #CC0033;
+	clear: both;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.header {
+	background-color: #FFFFFF;
+	border-bottom: 10px solid #CC0033;
+}
+
+.headerImage {
+	border: 0px;
+}
+
+.imageLink {
+	border: 0px solid #000000;
+}
+
+.navigation li {
+	border-bottom: 1px solid #000000;
+	color: #000000;
+	list-style: none;
+	padding: 10px;
+}
+
+.navigation li a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.navigation ul {
+	margin: 0;
+	padding: 13px 0 0 0;
+}
+
+.navigation li a:hover {
+	color: #0000FF;
+}
+
+.main {
+	border-left: 1px solid #000080;
+	float: right;
+	padding: 0 0 0 15px;
+	width: 570px;
+}
+
+.navigation {
+	float: left;
+	width: 200px;
+}
+
+.navigation li {
+	margin: 5px;
+}
+
+pre
+{
+background-color:#F0F0F0;
+overflow:scroll;
+}
+
+.teamDescription {
+	margin-bottom: 15px;
+}
+
+.teamImage {
+	border: 1px solid #000000;
+	margin: 5px;
+	vertical-align: text-top;
+}
+
+.version {
+	float: right;
+	margin-top: 60px;
+	width: 280px;
+}
+
