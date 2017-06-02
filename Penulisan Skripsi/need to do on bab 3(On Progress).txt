@@ -1,0 +1,11 @@
+
+1. Tambahin ss dan cara word-processing dari status, proses translatenya dll. Distribusi personality dari user data baru
+
+2. Ganti tabel features LIWC dan Splice features
+
+3. Explain learning process using scikit learn.
+
+4. Buat flowchart proses machine learning.
+	Kalau bisa bedain algoritmanya satu-satu.
+5. Buat flowchart proses deep learning.
+
