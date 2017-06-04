@@ -3,3 +3,7 @@
  - algoritma deep learning
  - 
 2. Cek tahun menurut ahli dan kevalid-an informasi
+
+3. tambah penelitian terkait dan jelasin setiap tabel dan gambar
+
+4. cek bahasa inggris italic
