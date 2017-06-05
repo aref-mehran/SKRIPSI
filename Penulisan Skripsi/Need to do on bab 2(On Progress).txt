@@ -1,6 +1,9 @@
 1. Cek yang perlu ditambah di landasan teori
+ - machine learning tambahan 
  - scikit learn
+ - Resampling
  - algoritma deep learning
+	-keras, theano
  - 
 2. Cek tahun menurut ahli dan kevalid-an informasi
 
