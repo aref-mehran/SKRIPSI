@@ -1,3 +1,8 @@
 cari tau lagi apa yang salah dari training deep learning inputan status word count
 
 VOLATECH
+
+Validasi Hasil Training
+Diskusi Deep Learning network
+Permintaan Dataset dari myPersonality
+Rancangan Bab 3 Skripsi
