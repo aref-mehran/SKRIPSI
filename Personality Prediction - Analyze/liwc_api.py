@@ -8,10 +8,10 @@ receptivitiName = "hendro ndod" #Unique name for Receptiviti's user
 receptivitiGender = 2 #0=Undefined, 1=Female, 2=Male
 contentLanguage = "english"
 contentSource = 4 #4=Media Social (Except Twitter)
-totalDataset = 389
+totalDataset = 150
 
 def liwcPersonPost(): #liwcPersonPost run once, the data will be saved in Receptiviti
-    statusFileName = r'Dataset\Personality Prediction\Dataset\mix\mix_status_dataset.txt' #Dataset filename
+    statusFileName = r'Dataset\Personality Prediction\Dataset\chamndod\chamndod_status_dataset.txt' #Dataset filename
     liwcStatusDset = unicode(open(statusFileName).read(), errors='ignore') #Read file
     liwcStatusDataset = liwcStatusDset.split('#SEPARATOR#') #Split LIWC Status Dataset by each user
     
@@ -35,7 +35,7 @@ def liwcPersonPost(): #liwcPersonPost run once, the data will be saved in Recept
         print("Complete analysis user-" + str(index+1) + "...")    
     print("Complete analysis all user")
     
-    resultFileName = open("Dataset\Personality Prediction\Dataset\mix\Features\LIWC\mix_liwc.json", "w") #LIWC JSON result filename
+    resultFileName = open("Dataset/Personality Prediction/Dataset/chamndod/Machine Learning/Features/LIWC/chamndod_liwc.json", "w") #LIWC JSON result filename
     resultFileName.write(json.dumps(result).replace("\"", "").replace("\\", "\""))
     resultFileName.close
 
@@ -50,7 +50,7 @@ def liwcPersonGet():
     print(result)
 
 def saveLiwcData():
-    liwcResultFileName = r'Dataset\Personality Prediction\Dataset\mix\Features\LIWC\mix_liwc.json' #Dataset filename
+    liwcResultFileName = r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Features\LIWC\chamndod_liwc.json' #Dataset filename
     liwcResultJson = open(liwcResultFileName).read() #Read file
     liwcResult = json.loads(liwcResultJson)
     
@@ -69,11 +69,11 @@ def saveLiwcData():
         if (i < totalDataset-1):
             liwcData += "\n"
     
-    liwcDataFilename = open("Dataset\Personality Prediction\Dataset\mix\Features\LIWC\mix_liwc_data.txt", "w")
+    liwcDataFilename = open("Dataset/Personality Prediction/Dataset/chamndod/Machine Learning/Features/LIWC/chamndod_liwc_data.txt", "w")
     liwcDataFilename.write(liwcData)
     liwcDataFilename.close
     print("LIWC data has been saved.")
         
 # liwcPersonPost() #Don't forget to change destination file, so it won't be replaced
 # liwcPersonGet() #Not used
-saveLiwcData()
+# saveLiwcData()

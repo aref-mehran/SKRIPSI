@@ -1,6 +1,6 @@
 import arff
 
-totalDataset = 250
+totalDataset = 150
 #Fb attribute = 7
 #LIWC attribute = 85
 #Splice attribute = 74
@@ -8,22 +8,22 @@ totalDataset = 250
 
 def writeAllToArff():
     #READ ALL ATTRIBUTES
-    attributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\all_attributes.txt'
+    attributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fs_all_attributes.txt'
     attributes = open(attributeFileName).read()
     attributes = attributes.split('\n')
     
     #READ DATA_FB_FEATURES
-    fbFeaturesFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fb_features_data.txt'
+    fbFeaturesFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fs_fb_features_data.txt'
     fbFeatures = open(fbFeaturesFileName).read()
     fbFeatures = fbFeatures.split('\n')
     
     #READ DATA_LIWC_FEATURES
-    liwcFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\LIWC\mypersonality_liwc_data.txt'
+    liwcFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\LIWC\mypersonality_fs_liwc_data.txt'
     liwcFeatures = open(liwcFeaturesFileName).read()
     liwcFeatures = liwcFeatures.split('\n')
                 
     #READ_DATA_SPLICE_FEATURES
-    spliceFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\Splice\mypersonality_splice_data.txt'
+    spliceFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\Splice\mypersonality_fs_splice_data.txt'
     spliceFeatures = open(spliceFeaturesFileName).read()
     spliceFeatures = spliceFeatures.split('\n')
 
@@ -46,19 +46,19 @@ def writeAllToArff():
             else:
                 arffContent = arffContent + fbFeatures[index] + "," + liwcFeatures[index] + "," + spliceFeatures[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\Fb Features LIWC Splice\mypersonality_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
+        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\Fb Features LIWC Splice\mypersonality_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
 
 def writeFbFeaturesToArff():
     #READ FB FEATURES ATTRIBUTES
-    attributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fb_features_attributes.txt'
+    attributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fs_fb_features_attributes.txt'
     attributes = open(attributeFileName).read()
     attributes = attributes.split('\n')
     
     #READ FB FEATURES
-    featuresFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fb_features_data.txt'
+    featuresFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fs_fb_features_data.txt'
     features = open(featuresFileName).read()
     features = features.split('\n')
 
@@ -81,26 +81,26 @@ def writeFbFeaturesToArff():
             else:
                 arffContent = arffContent + features[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\FB Features\mypersonality_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
+        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\FB Features\mypersonality_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
         
 def writeLiwcToArff():
     #READ LIWC ATTRIBUTES
-    attributeFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Attributes\liwc_attributes.txt'
+    attributeFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Attributes\fs_liwc_attributes.txt'
     attributes = open(attributeFileName).read()
     attributes = attributes.split('\n')
     
     #READ LIWC FEATURES
-    featuresFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Features\LIWC\chamndod_liwc_data.txt'
+    featuresFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Features\LIWC\chamndod_fs_liwc_data.txt'
     features = open(featuresFileName).read()
     features = features.split('\n')
 
     for datasetCounter in (range(0, 5)):
         personalityClass = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
         #READ_PERSONALITY_CLASS
-        personalityClassFileName = r'Dataset\Personality Prediction\Dataset\mix\Machine Learning\Class\chamndod_' + personalityClass[datasetCounter] + '_class.txt'
+        personalityClassFileName = r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Class\chamndod_' + personalityClass[datasetCounter] + '_class.txt'
         personalityClassResults = open(personalityClassFileName).read()
         personalityClassResult = personalityClassResults.split('\n')
     
@@ -116,26 +116,26 @@ def writeLiwcToArff():
             else:
                 arffContent = arffContent + features[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mix\Machine Learning\Arff\LIWC\chamndod_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
+        resultFileName = open("Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Arff\LIWC\chamndod_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
 
 def writeSpliceToArff():
     #READ SPLICE ATTRIBUTES
-    attributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\splice_attributes.txt'
+    attributeFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Attributes\fs_splice_attributes.txt'
     attributes = open(attributeFileName).read()
     attributes = attributes.split('\n')
     
     #READ SPLICE FEATURES
-    featuresFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\Splice\mypersonality_splice_data.txt'
+    featuresFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Features\Splice\chamndod_fs_splice_data.txt'
     features = open(featuresFileName).read()
     features = features.split('\n')
 
     for datasetCounter in (range(0, 5)):
         personalityClass = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
         #READ_PERSONALITY_CLASS
-        personalityClassFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Class\mypersonality_' + personalityClass[datasetCounter] + '_class.txt'
+        personalityClassFileName = r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Class\chamndod_' + personalityClass[datasetCounter] + '_class.txt'
         personalityClassResults = open(personalityClassFileName).read()
         personalityClassResult = personalityClassResults.split('\n')
     
@@ -151,36 +151,36 @@ def writeSpliceToArff():
             else:
                 arffContent = arffContent + features[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine learning\Arff\Splice\mypersonality_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
+        resultFileName = open("Dataset\Personality Prediction\Dataset\chamndod\Machine learning\Arff\Splice\chamndod_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w")
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
 
 def writeLiwcSpliceToArff():
     #READ LIWC ATTRIBUTES
-    liwcAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\liwc_attributes.txt'
+    liwcAttributeFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Attributes\fs_liwc_attributes.txt'
     liwcAttributes = open(liwcAttributeFileName).read()
     liwcAttributes = liwcAttributes.split('\n')
     
     #READ SPLICE ATTRIBUTES
-    spliceAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\splice_attributes.txt'
+    spliceAttributeFileName= r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Attributes\fs_splice_attributes.txt'
     spliceAttributes = open(spliceAttributeFileName).read()
     spliceAttributes = spliceAttributes.split('\n')
     
     #READ DATA_LIWC_FEATURES
-    liwcFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine learning\Features\LIWC\mypersonality_liwc_data.txt'
+    liwcFeaturesFileName = r'Dataset\Personality Prediction\Dataset\chamndod\Machine learning\Features\LIWC\chamndod_fs_liwc_data.txt'
     liwcFeatures = open(liwcFeaturesFileName).read()
     liwcFeatures = liwcFeatures.split('\n')
                 
     #READ_DATA_SPLICE_FEATURES
-    spliceFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\Splice\mypersonality_splice_data.txt'
+    spliceFeaturesFileName = r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Features\Splice\chamndod_fs_splice_data.txt'
     spliceFeatures = open(spliceFeaturesFileName).read()
     spliceFeatures = spliceFeatures.split('\n')
 
     for datasetCounter in (range(0, 5)):
         personalityClass = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
         #READ_PERSONALITY_CLASS
-        personalityClassFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Class\mypersonality_' + personalityClass[datasetCounter] + '_class.txt'
+        personalityClassFileName = r'Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Class\chamndod_' + personalityClass[datasetCounter] + '_class.txt'
         personalityClassResults = open(personalityClassFileName).read()
         personalityClassResult = personalityClassResults.split('\n')
     
@@ -198,29 +198,29 @@ def writeLiwcSpliceToArff():
             else:
                 arffContent = arffContent + liwcFeatures[index] + "," + spliceFeatures[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\LIWC Splice\mypersonality_" + personalityClass[datasetCounter] + "_dataset.arff", "w") #LIWC JSON result filename
+        resultFileName = open("Dataset\Personality Prediction\Dataset\chamndod\Machine Learning\Arff\LIWC Splice\chamndod_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w") #LIWC JSON result filename
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
     
 def writeFbFeaturesLiwcToArff():
     #READ FB Features ATTRIBUTES
-    fbFeaturesAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fb_features_attributes.txt'
+    fbFeaturesAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fs_fb_features_attributes.txt'
     fbFeaturesAttributes = open(fbFeaturesAttributeFileName).read()
     fbFeaturesAttributes = fbFeaturesAttributes.split('\n')
     
     #READ LIWC ATTRIBUTES
-    liwcAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\liwc_attributes.txt'
+    liwcAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fs_liwc_attributes.txt'
     liwcAttributes = open(liwcAttributeFileName).read()
     liwcAttributes = liwcAttributes.split('\n')
     
     #READ DATA FB FEATURES
-    fbFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fb_features_data.txt'
+    fbFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fs_fb_features_data.txt'
     fbFeatures = open(fbFeaturesFileName).read()
     fbFeatures = fbFeatures.split('\n')
     
     #READ DATA LIWC FEATURES
-    liwcFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine learning\Features\LIWC\mypersonality_liwc_data.txt'
+    liwcFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine learning\Features\LIWC\mypersonality_fs_liwc_data.txt'
     liwcFeatures = open(liwcFeaturesFileName).read()
     liwcFeatures = liwcFeatures.split('\n')
 
@@ -245,29 +245,29 @@ def writeFbFeaturesLiwcToArff():
             else:
                 arffContent = arffContent + fbFeatures[index] + "," + liwcFeatures[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\FB Features LIWC\mypersonality_" + personalityClass[datasetCounter] + "_dataset.arff", "w") #LIWC JSON result filename
+        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\FB Features LIWC\mypersonality_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w") #LIWC JSON result filename
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
     
 def writeFbFeaturesSpliceToArff():
     #READ FB Features ATTRIBUTES
-    fbFeaturesAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fb_features_attributes.txt'
+    fbFeaturesAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fs_fb_features_attributes.txt'
     fbFeaturesAttributes = open(fbFeaturesAttributeFileName).read()
     fbFeaturesAttributes = fbFeaturesAttributes.split('\n')
     
     #READ Splice ATTRIBUTES
-    spliceAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\splice_attributes.txt'
+    spliceAttributeFileName= r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Attributes\fs_splice_attributes.txt'
     spliceAttributes = open(spliceAttributeFileName).read()
     spliceAttributes = spliceAttributes.split('\n')
     
     #READ DATA FB FEATURES
-    fbFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fb_features_data.txt'
+    fbFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Features\FB Features\mypersonality_fs_fb_features_data.txt'
     fbFeatures = open(fbFeaturesFileName).read()
     fbFeatures = fbFeatures.split('\n')
     
     #READ DATA Splice FEATURES
-    spliceFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine learning\Features\Splice\mypersonality_splice_data.txt'
+    spliceFeaturesFileName = r'Dataset\Personality Prediction\Dataset\mypersonality\Machine learning\Features\Splice\mypersonality_fs_splice_data.txt'
     spliceFeatures = open(spliceFeaturesFileName).read()
     spliceFeatures = spliceFeatures.split('\n')
 
@@ -292,7 +292,7 @@ def writeFbFeaturesSpliceToArff():
             else:
                 arffContent = arffContent + fbFeatures[index] + "," + spliceFeatures[index] + "," + personalityClassResult[index]
         
-        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\FB Features Splice\mypersonality_" + personalityClass[datasetCounter] + "_dataset.arff", "w") #LIWC JSON result filename
+        resultFileName = open("Dataset\Personality Prediction\Dataset\mypersonality\Machine Learning\Arff\FB Features Splice\mypersonality_fs_" + personalityClass[datasetCounter] + "_dataset.arff", "w") #LIWC JSON result filename
         resultFileName.write(arffContent)
         resultFileName.close
     print ("All Personality Datasets have been written")
@@ -301,7 +301,7 @@ def writeFbFeaturesSpliceToArff():
 # writeAllToArff()
 # writeFbFeaturesToArff()
 # writeLiwcToArff()
-# writeSpliceToArff()    
+# writeSpliceToArff()
 # writeLiwcSpliceToArff()
 # writeFbFeaturesLiwcToArff()
-writeFbFeaturesSpliceToArff()
+# writeFbFeaturesSpliceToArff()

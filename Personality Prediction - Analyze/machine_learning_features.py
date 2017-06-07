@@ -12,14 +12,17 @@ from sklearn.svm import SVC, NuSVC, LinearSVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier, ExtraTreesClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.feature_selection import SelectKBest, chi2, RFE
+from sklearn.decomposition import PCA
+from sklearn.tree.tree import ExtraTreeClassifier
 
-TOTAL_DATASET = 389
-total_features = 74
-index_class = 74
+TOTAL_DATASET = 400
+total_features = 60
+index_class = 60
 # FB_Features=7; LIWC=85; Splice=74
+# fs_FB_Features=5; fs_LIWC=7; fs_Splice=60
 
 class GetFeatures(TransformerMixin):
     def transform(self, features):
@@ -62,13 +65,50 @@ def train(dsetFilename, classifier):
     data = DataFrame({'features': [], 'class': []})
     for i in range(0, TOTAL_DATASET):
         data = data.append(build_data_frame(features[i], transformedEncodeClassification[i]))
-    data = data.reindex(numpy.random.permutation(data.index))
-    
+#     data = data.reindex(numpy.random.permutation(data.index))
+
     #TRAINING USING PIPELINE
     pipeline = Pipeline([
         ('features', GetFeatures()),
         ('classifier', classifier)
     ])
+    
+    # Start of FeatureSelection #######################################################################################################
+    # ONLY FOR SPLICE DATASET, ABSOLUTE ALL NEGATIVE FEATURES
+#     for i in range(0, data['features'].values.shape[0]):
+#         for j in range(0, len(data['features'].values[i])):
+#             if (data['features'].values[i][j] < 0):
+#                 data['features'].values[i][j] = abs(data['features'].values[i][j])
+#     # ONLY FOR SPLICE DATASET, ABSOLUTE ALL NEGATIVE FEATURES
+#     element_data_features = []
+#     for i in range(0, data['features'].values.shape[0]):
+#         element_data_features.append(data['features'].values[i])
+#     temp_data_features = numpy.array(element_data_features)
+#     temp_data_features = numpy.reshape(temp_data_features, (len(temp_data_features), total_features))
+#     
+#     # Univariate Selection
+#     kBest = SelectKBest(score_func=chi2, k=5) # FB=5 , LIWC=7, Splice=60
+#     kBestFit = kBest.fit(temp_data_features, data['class'].values)
+#     numpy.set_printoptions(precision=3)
+#     kBestScore = kBestFit.scores_ # Score for each class
+#     print(kBestScore)
+#     kBestScore.sort()
+#     print(kBestScore)
+#     featureSelectionResult = kBestFit.transform(temp_data_features)
+
+    # Recursive Feature Elimination (RFE)
+#     model = LogisticRegression()
+#     rfe = RFE(model, 1)
+#     rfeFit = rfe.fit(temp_data_features, data['class'].values)
+#     numpy.set_printoptions(precision=3)
+#     print(rfeFit.ranking_)
+#     featureSelectionResult = rfeFit.transform(temp_data_features)
+
+    # Principal Component Analysis (PCA)
+#     pca = PCA(n_components=55)
+#     pcaFit = pca.fit(temp_data_features)
+#     featureSelectionResult = pcaFit.transform(temp_data_features)
+    # End of FeatureSelection #########################################################################################################
     
     #CROSS-VALIDATING
     print ("Start training " + dsetFilename + " with\n" + str(classifier))
@@ -114,31 +154,31 @@ def train(dsetFilename, classifier):
     
     trainResult = ''
 #     trainResult += 'Filename: ' + dsetFilename + '\n'
-    trainResult += 'Classifier: ' + str(classifier) + '\n'
-    trainResult += 'Confusion Matrix:\n' + str(confusion) + '\n'
-    trainResult += 'Precision: ' + str(sum(precision_scores)/len(precision_scores)) + '\n'
-    trainResult += 'Recall: ' + str(sum(recall_scores)/len(recall_scores)) + '\n'
-    trainResult += 'Accuracy: ' + str(sum(accuracy_scores)/len(accuracy_scores)) + '\n'
-    trainResult += 'F1 Measure: ' + str(sum(f1_scores)/len(f1_scores)) + '\n'
-    trainResult += 'ROC AUC: ' + str(sum(roc_auc_scores)/len(roc_auc_scores)) + '\n'
-    trainResult += 'MAE: ' + str(sum(mae_scores)/len(mae_scores)) + '\n'
-    trainResult += 'MSE: ' + str(sum(mse_scores)/len(mse_scores)) + '\n'
-    trainResult += 'R2: ' + str(sum(r2_scores)/len(r2_scores)) + '\n\n'
+#     trainResult += 'Classifier: ' + str(classifier) + '\n'
+    trainResult += str(confusion[0]) + str(confusion[1]) + ','
+    trainResult += str(sum(precision_scores)/len(precision_scores)) + ','
+    trainResult += str(sum(recall_scores)/len(recall_scores)) + ','
+    trainResult += str(sum(f1_scores)/len(f1_scores)) + ','
+    trainResult += str(sum(accuracy_scores)/len(accuracy_scores)) + ','
+    trainResult += str(sum(roc_auc_scores)/len(roc_auc_scores)) + ','
+    trainResult += str(sum(mae_scores)/len(mae_scores)) + ','
+    trainResult += str(sum(mse_scores)/len(mse_scores)) + ','
+    trainResult += str(sum(r2_scores)/len(r2_scores)) + '\n'
     print ("Trained successfully\n")
     
     return trainResult
 
 traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
-# traits = ['conscientiousness']
+# traits = ['openness']
 classifiers = [GaussianNB(), BernoulliNB(), LinearSVC(), LogisticRegression(), DecisionTreeClassifier(), KNeighborsClassifier(), RandomForestClassifier(), GradientBoostingClassifier(), AdaBoostClassifier(), LinearDiscriminantAnalysis()]
-# classifiers = [GaussianNB()]
+# classifiers = [LinearDiscriminantAnalysis()]
 for trait in traits:
-    dsetFilename = "Dataset\Personality Prediction\Dataset\mix\Machine Learning\Arff\Splice\mix_"+trait+"_dataset.arff"
+    dsetFilename = "Dataset\Personality Prediction\Dataset\mix\Machine Learning\Arff\Splice\mix_fs_"+trait+"_dataset.arff"
     trainResult = ""
     for classifier in classifiers:
          trainResult += train(dsetFilename, classifier)
 
-#     resultFileName = open("Dataset/Personality Prediction/Dataset/mix/Machine Learning/Arff/Splice/Training Result/Without Preprocessing/Without Resampling/training_result_"+trait+".txt", "w")
+#     resultFileName = open("Dataset/Personality Prediction/Dataset/mix/Machine Learning/Training Result/tr_ml_splice_fs_nores_"+trait[0]+".txt", "w")
 #     resultFileName.write(trainResult)
 #     resultFileName.close
 print("All training result has been saved.")

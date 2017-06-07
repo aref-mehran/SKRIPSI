@@ -17,10 +17,11 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.feature_selection import SelectKBest, chi2
 from imblearn.over_sampling import SMOTE, RandomOverSampler
 
-TOTAL_DATASET = 389
-total_features = 74
-index_class = 74
+TOTAL_DATASET = 400
+total_features = 60
+index_class = 60
 # FB_Features=7; LIWC=85; Splice=74
+# fs_FB_Features=5; fs_LIWC=7; fs_Splice=60
 
 class GetFeatures(TransformerMixin):
     def transform(self, features):
@@ -116,7 +117,10 @@ def train(dsetFilename, classifier):
         recallScore = recall_score(y_test, predictions, pos_label=1)
         accuracyScore = accuracy_score(y_test, predictions)
         f1Score = f1_score(y_test, predictions, pos_label=1)
-        rocAucScore = roc_auc_score(y_test, predictions)
+        try:
+            rocAucScore = roc_auc_score(y_test, predictions)
+        except:
+            rocAucScore = 0
         maeScore = mean_absolute_error(y_test, predictions)
         mseScore = mean_squared_error(y_test, predictions)
         r2Score = r2_score(y_test, predictions)
@@ -132,16 +136,16 @@ def train(dsetFilename, classifier):
     
     trainResult = ''
 #     trainResult += 'Filename: ' + dsetFilename + '\n'
-    trainResult += 'Classifier: ' + str(classifier) + '\n'
-    trainResult += 'Confusion Matrix:\n' + str(confusion) + '\n'
-    trainResult += 'Precision: ' + str(sum(precision_scores)/len(precision_scores)) + '\n'
-    trainResult += 'Recall: ' + str(sum(recall_scores)/len(recall_scores)) + '\n'
-    trainResult += 'Accuracy: ' + str(sum(accuracy_scores)/len(accuracy_scores)) + '\n'
-    trainResult += 'F1 Measure: ' + str(sum(f1_scores)/len(f1_scores)) + '\n'
-    trainResult += 'ROC AUC: ' + str(sum(roc_auc_scores)/len(roc_auc_scores)) + '\n'
-    trainResult += 'MAE: ' + str(sum(mae_scores)/len(mae_scores)) + '\n'
-    trainResult += 'MSE: ' + str(sum(mse_scores)/len(mse_scores)) + '\n'
-    trainResult += 'R2: ' + str(sum(r2_scores)/len(r2_scores)) + '\n\n'
+#     trainResult += 'Classifier: ' + str(classifier) + '\n'
+    trainResult += str(confusion[0]) + str(confusion[1]) + ','
+    trainResult += str(sum(precision_scores)/len(precision_scores)) + ','
+    trainResult += str(sum(recall_scores)/len(recall_scores)) + ','
+    trainResult += str(sum(f1_scores)/len(f1_scores)) + ','
+    trainResult += str(sum(accuracy_scores)/len(accuracy_scores)) + ','
+    trainResult += str(sum(roc_auc_scores)/len(roc_auc_scores)) + ','
+    trainResult += str(sum(mae_scores)/len(mae_scores)) + ','
+    trainResult += str(sum(mse_scores)/len(mse_scores)) + ','
+    trainResult += str(sum(r2_scores)/len(r2_scores)) + '\n'
     print ("Trained successfully\n")
     
     return trainResult
@@ -151,12 +155,12 @@ traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neu
 classifiers = [GaussianNB(), BernoulliNB(), LinearSVC(), LogisticRegression(), DecisionTreeClassifier(), KNeighborsClassifier(), RandomForestClassifier(), GradientBoostingClassifier(), AdaBoostClassifier(), LinearDiscriminantAnalysis()]
 # classifiers = [GaussianNB()]
 for trait in traits:
-    dsetFilename = "Dataset\Personality Prediction\Dataset\mix\Machine Learning\Arff\Splice\mix_"+trait+"_dataset.arff"
+    dsetFilename = "Dataset\Personality Prediction\Dataset\mix\Machine Learning\Arff\Splice\mix_fs_"+trait+"_dataset.arff"
     trainResult = ""
     for classifier in classifiers:
          trainResult += train(dsetFilename, classifier)
 
-#     resultFileName = open("Dataset/Personality Prediction/Dataset/mix/Machine Learning/Arff/Splice/Training Result/Without Preprocessing/Oversampling/training_result_"+trait+".txt", "w")
+#     resultFileName = open("Dataset/Personality Prediction/Dataset/mix/Machine Learning/Training Result/tr_ml_splice_fs_over_"+trait[0]+".txt", "w")
 #     resultFileName.write(trainResult)
 #     resultFileName.close
 print("All training result has been saved.")

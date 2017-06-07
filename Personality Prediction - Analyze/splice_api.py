@@ -1,10 +1,10 @@
 import requests
 import xml.etree.ElementTree as ET
 
-statusFileName = r'Dataset\Personality Prediction\Dataset\mix\mix_status_dataset.txt' #Dataset filename
+statusFileName = r'Dataset\Personality Prediction\Dataset\chamndod\chamndod_status_dataset.txt' #Dataset filename
 spliceStatusDset = unicode(open(statusFileName).read(), errors='ignore') #Read file
 spliceStatusDataset = spliceStatusDset.split('#SEPARATOR#') #Split Splice Status Dataset by each user
-totalDataset = 139
+totalDataset = 150
 
 def splicePost():
     spliceCues = "numChars numCharsMinusSpacesAndPunctuation numWords numSentences numPunctuation numNouns numVerbs \
@@ -30,7 +30,7 @@ def splicePost():
         print("Complete analysis user-" + str(index+1) + "...")
     print ("Complete analysis all user")
     
-    resultFileName = open("Dataset\Personality Prediction\Dataset\mix\Features\Splice\mix_splice.xml", "w") #LIWC JSON result filename
+    resultFileName = open("Dataset/Personality Prediction/Dataset/chamndod/Machine Learning/Features/Splice/chamndod_splice.xml", "w") #LIWC JSON result filename
     resultFileName.write("<?xml version=\"1.0\"?>\n<Splice>")
     for index in range(0, totalDataset):
         resultFileName.write("\n\t<Data>\n\t\t")
@@ -58,10 +58,10 @@ def saveSpliceData():
         index1 = index1 + 1
         index2 = 0
     
-    liwcDataFilename = open("Dataset\Personality Prediction\Dataset\chamndod\Features\Splice\chamndod_splice_data.txt", "w")
+    liwcDataFilename = open("Dataset/Personality Prediction/Dataset/chamndod/Features/Splice/chamndod_splice_data.txt", "w")
     liwcDataFilename.write(spliceData)
     liwcDataFilename.close
     print("Splice data has been saved.")
         
-# splicePost() #Don't forget to change destination file, so it won't be replaced
-saveSpliceData()
+splicePost() #Don't forget to change destination file, so it won't be replaced
+# saveSpliceData()

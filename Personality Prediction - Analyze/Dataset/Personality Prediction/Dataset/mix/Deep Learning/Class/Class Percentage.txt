@@ -1,26 +1,26 @@
-TOTAL INSTANCES: 389
+TOTAL INSTANCES: 400
 
 OPENNESS
-Yes: 263 (67.61%)
-No : 126 (32.39%)
-Yes : No (2.09 : 1)
+Yes: 273 (68.25%)
+No : 127  (31.75%)
+Yes : No (2.15 : 1)
 
 CONSCIENTIOUSNESS
-Yes: 186 (47.81%)
-No : 203 (52.19%)
-Yes : No (1 : 1.09)
+Yes: 193 (48.25%)
+No : 207 (51.75%)
+Yes : No (1 : 1.07)
 
 EXTRAVERSION
-Yes: 130 (33.42%)
-No : 259 (66.58%)
+Yes: 134  (33.50%)
+No : 266 (66.50%)
 Yes : No (1 : 1.99)
 
 AGREEABLENESS
-Yes: 209 (53.73%)
-No : 180 (46.27%)
+Yes: 215 (53.75%)
+No : 185 (46.25%)
 Yes : No (1.16 : 1)
 
 NEUROTICISM
-Yes: 148 (38.05%)
-No : 241 (61.95%)
-Yes : No (1 : 1.63)
+Yes: 149  (37.25%)
+No : 251 (62.75%)
+Yes : No (1 : 1.68)

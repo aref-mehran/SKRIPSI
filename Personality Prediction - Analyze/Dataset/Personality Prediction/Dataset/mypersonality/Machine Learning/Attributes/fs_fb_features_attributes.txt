@@ -1,0 +1,5 @@
+networksize
+betweenness
+nbetweenness
+density
+brokerage

@@ -1,0 +1,7 @@
+ppron
+percept
+quant
+exclam
+see
+allpunc
+male
