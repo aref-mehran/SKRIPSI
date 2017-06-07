@@ -1,3 +1,29 @@
 Scikit-learn
-http://www.jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf
-https://arxiv.org/pdf/1309.0238.pdf
+http://www.jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf (akses 04-06-2017)
+https://arxiv.org/pdf/1309.0238.pdf (akses 04-06-2017)
+
+CNN Layers
+http://ejurnal.its.ac.id/index.php/teknik/article/viewFile/15696/2553 (akses 05-06-2017)
+scarlet.stanford.edu/teach/index.php/An_Introduction_to_Convolutional_Neural_Networks (akses 05-06-2017)
+
+Keras
+https://keras.io/ (akses 06-06-2017)
+
+Theano
+http://deeplearning.net/software/theano/ (akses 06-06-2017)
+
+Resampling
+JAPKOWICZ, N., and S. STEPHEN. 2002. The class imbalance problem: a systematic study. Intelligent Data Analysis,
+6(5):429–450.
+
+Oversampling & Resampling
+http://sci2s.ugr.es/keel/pdf/specific/congreso/han_borderline_smote.pdf
+
+SMOTE
+http://www.jair.org/media/953/live-953-2037-jair.pdf
+
+ADASYN
+http://sci2s.ugr.es/keel/pdf/algorithm/congreso/2008-He-ieee.pdf
+
+Cluster Centroids
+http://contrib.scikit-learn.org/imbalanced-learn/generated/imblearn.under_sampling.ClusterCentroids.html
