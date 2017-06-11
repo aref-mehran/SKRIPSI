@@ -117,7 +117,7 @@ def train(datasetFilename, classFilename):
     model.add(Dense(2, activation='softmax'))
     model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy', 'mse', 'mae'])
     
-    model.fit(x_train, y_train, batch_size=32, epochs=10, validation_data=(x_test, y_test), verbose=2)
+    model.fit(x_train, y_train, batch_size=32, epochs=5, validation_data=(x_test, y_test), verbose=2)
     
     # Evaluate Model
     confusion = np.array([[0, 0], [0, 0]])
@@ -166,16 +166,16 @@ def train(datasetFilename, classFilename):
     # plt.xlabel('False Positive Rate')
     # plt.show()
     
-datasetName = 'mypersonality'
-traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
-# traits = ['openness']
-datasetFilename = "Dataset\Personality Prediction\Dataset\\" + datasetName + "\\" + datasetName + "_status_dataset.txt"
+datasetName = 'chamndod'
+# traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
+traits = ['neuroticism']
+datasetFilename = "Dataset\Personality Prediction\Dataset\\" + datasetName + "\\" + datasetName + "_preprop_status_dataset.txt"
 for trait in traits:
     classFilename = r'Dataset\Personality Prediction\Dataset\\' + datasetName + '\Deep Learning\Class\\' + datasetName + '_' + trait + '_class.txt'
     trainResult = ""
     trainResult += train(datasetFilename, classFilename)
     
-    resultFileName = open("Dataset/Personality Prediction/Dataset/" + datasetName + "/Deep Learning/Training Result/tr_dl_text_nopreprop_nores_"+trait[0]+".txt", "a")
+    resultFileName = open("Dataset/Personality Prediction/Dataset/" + datasetName + "/Deep Learning/Training Result/tr_dl_text_preprop_under_"+trait[0]+".txt", "a")
     resultFileName.write(trainResult)
     resultFileName.close
 print("All training result has been saved.")

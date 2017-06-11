@@ -50,9 +50,9 @@ def train(datasetFilename, classFilename):
     
     tempTexts = []
     tempLabels = []
-    indices = np.arange(250)
+    indices = np.arange(400)
     np.random.shuffle(indices)
-    for i in range(0, 250):
+    for i in range(0, 400):
         tempTexts.append(texts[indices[i]])
         tempLabels.append(labels[indices[i]])
     texts = tempTexts
@@ -190,16 +190,16 @@ def train(datasetFilename, classFilename):
     # plt.xlabel('False Positive Rate')
     # plt.show()
     
-datasetName = 'mypersonality'
+datasetName = 'mix'
 traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
 # traits = ['openness']
-datasetFilename = "Dataset\Personality Prediction\Dataset\\" + datasetName + "\\" + datasetName + "_status_dataset.txt"
+datasetFilename = "Dataset\Personality Prediction\Dataset\\" + datasetName + "\\" + datasetName + "_preprop_status_dataset.txt"
 for trait in traits:
     classFilename = r'Dataset\Personality Prediction\Dataset\\' + datasetName + '\Deep Learning\Class\\' + datasetName + '_' + trait + '_class.txt'
     trainResult = ""
     trainResult += train(datasetFilename, classFilename)
     
-    resultFileName = open("Dataset/Personality Prediction/Dataset/" + datasetName + "/Deep Learning/Training Result/tr_dl_text_nopreprop_nores_"+trait[0]+".txt", "a")
+    resultFileName = open("Dataset/Personality Prediction/Dataset/" + datasetName + "/Deep Learning/Training Result/tr_dl_text_preprop_over_"+trait[0]+".txt", "a")
     resultFileName.write(trainResult)
     resultFileName.close
 print("All training result has been saved.")
