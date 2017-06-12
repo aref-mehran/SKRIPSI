@@ -1,3 +1,22 @@
+BAB 4 (Features setelah feature selection, Distribusi data setelah resampling, kesimpulan machine learning training result keseluruhan tidak pakai dataset ?)
+BAB 2 (Gradient boosting, LDA, LSTM, GRU)
+
+Gradient Boosting
+http://projecteuclid.org/download/pdf_1/euclid.aos/1013203451
+https://robjhyndman.com/papers/kaggle-competition.pdf
+
+Linear Discriminant Analysis
+http://papers.nips.cc/paper/2547-two-dimensional-linear-discriminant-analysis.pdf
+https://infoscience.epfl.ch/record/192401/files/ElShafey_TPAMI_2013.pdf
+http://bsp.brain.riken.jp/publications/2014/AgregationSLDA.pdf
+
+LSTM
+http://193.6.4.39/~czap/letoltes/IS14/IS2014/PDF/AUTHOR/IS141304.PDF
+https://en.wikipedia.org/wiki/Long_short-term_memory
+
+GRU
+http://proceedings.mlr.press/v37/chung15.pdf
+
 Scikit-learn
 http://www.jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf (akses 04-06-2017)
 https://arxiv.org/pdf/1309.0238.pdf (akses 04-06-2017)
