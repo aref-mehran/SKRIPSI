@@ -1,0 +1,77 @@
+William Putra
+Openness is 7%
+Conscientiousness is 75%
+Extraversion is 100%
+Agreeableness is 3%
+Neuroticism is 90%
+
+Erwin Leo
+Openness is 52%
+Conscientiousness is 45%
+Extraversion is 1%
+Agreeableness is 81%
+Neuroticism is 29%
+
+Nico Wilson
+Openness is 84%
+Conscientiousness is 36%
+Extraversion is 0%
+Agreeableness is 97%
+Neuroticism is 26%
+
+Davin Becks
+Openness is 67%
+Conscientiousness is 75%
+Extraversion is 100%
+Agreeableness is 2%
+Neuroticism is 79%
+
+Marten Triyono
+Openness is 65%
+Conscientiousness is 54%
+Extraversion is 0%
+Agreeableness is 83%
+Neuroticism is 30%
+
+Kevin Khuang
+Openness is 48%
+Conscientiousness is 35%
+Extraversion is 1%
+Agreeableness is 72%
+Neuroticism is 12%
+
+Willy Oktaviano
+Openness is 13%
+Conscientiousness is 75%
+Extraversion is 100%
+Agreeableness is 7%
+Neuroticism is 85%
+
+Sri Andria Fransiska
+Openness is 93%
+Conscientiousness is 40%
+Extraversion is 0%
+Agreeableness is 96%
+Neuroticism is 24%
+
+Adzkiah Nabilah
+Openness is 92%
+Conscientiousness is 46%
+Extraversion is 0%
+Agreeableness is 96%
+Neuroticism is 6%
+
+Linawaty
+Openness is 63%
+Conscientiousness is 74%
+Extraversion is 0%
+Agreeableness is 60%
+Neuroticism is 24%
+
+
+bos
+apoy
+aneng
+awik
+adzkiah
+kevin khuang
