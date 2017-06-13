@@ -1,5 +1,13 @@
 BAB 4 (Features setelah feature selection, Distribusi data setelah resampling, kesimpulan machine learning training result keseluruhan tidak pakai dataset ?)
-BAB 2 (Gradient boosting, LDA, LSTM, GRU)
+
+Notepad++
+Excel 2010
+XAMPP
+Apache Server
+Numpy
+Pandas
+Imbalanced-learn
+NLTK
 
 Gradient Boosting
 http://projecteuclid.org/download/pdf_1/euclid.aos/1013203451
