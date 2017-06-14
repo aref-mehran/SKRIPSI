@@ -64,7 +64,7 @@ Neuroticism is 6%
 Linawaty
 Openness is 63%
 Conscientiousness is 74%
-Extraversion is 0%
+Extraversion is 100%
 Agreeableness is 60%
 Neuroticism is 24%
 
