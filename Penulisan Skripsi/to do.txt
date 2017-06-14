@@ -1,4 +1,4 @@
-1. Daftar isi, daftar gambar, daftar tabel
+1. Daftar isi, daftar gambar, daftar tabel (done)
 2. Kata pengantar dan cover (done)
 3. Lengkapin subjektif evaluasi (done)
 4. Lengkapin evaluasi objektif deep learning (done)
