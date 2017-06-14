@@ -11,11 +11,8 @@
 Halaman Sampul (done)
 Halaman Judul (done)
 Halaman Pernyataan Orisinalitas (done) 
-Halaman Persetujuan Pembimbing (khusus hard cover) 
-Halaman Pernyataan Dewan Penguji (khusus hard cover) 
-Halaman Pernyataan Persetujuan Publikasi Skripsi (khusus hard cover) 
 Abstrak (done) 
-Kata Pengantar (not yet) 
+Kata Pengantar (done) 
 Daftar Isi 
 Daftar Tabel 
 Daftar Gambar 
