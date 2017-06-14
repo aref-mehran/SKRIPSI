@@ -2,7 +2,7 @@
 2. Kata pengantar dan cover (done)
 3. Lengkapin subjektif evaluasi (done)
 4. Lengkapin evaluasi objektif deep learning (done)
-5. daftar pustaka (paging)
+5. daftar pustaka (done)
 6. Print Form isian ijazah, pas foto 3x4, 2 hal buku konsultasi paling akhir, Rencana pelaksanaan buku konsultasi, jilid buku konsultasi
 7. Minta surat non survei
 
@@ -12,7 +12,7 @@ Halaman Judul (done)
 Halaman Pernyataan Orisinalitas (done) 
 Abstrak (done) 
 Kata Pengantar (done) 
-Daftar Isi (on progress)
-Daftar Tabel 
-Daftar Gambar 
-Daftar Lampiran
+Daftar Isi (done)
+Daftar Tabel (done)
+Daftar Gambar (done)
+Daftar Lampiran (done)
