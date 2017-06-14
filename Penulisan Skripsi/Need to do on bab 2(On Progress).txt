@@ -1,3 +1,0 @@
-1. Cek yang perlu ditambah di landasan teori
- - 2 algoritma machine learning
- - 2 algoritma deep learning

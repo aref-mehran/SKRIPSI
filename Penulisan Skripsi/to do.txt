@@ -1,0 +1,22 @@
+1. Daftar isi, daftar gambar, daftar tabel
+	- edit penomoran halaman
+2. Kata pengantar dan cover
+3. Lengkapin subjektif evaluasi (done)
+4. Lengkapin evaluasi objektif deep learning (done)
+5. daftar pustaka
+6. Print Form isian ijazah, pas foto 3x4, 2 hal buku konsultasi paling akhir, Rencana pelaksanaan buku konsultasi, jilid buku konsultasi
+7. Minta surat non survei
+
+
+Halaman Sampul (done)
+Halaman Judul (done)
+Halaman Pernyataan Orisinalitas (done) 
+Halaman Persetujuan Pembimbing (khusus hard cover) 
+Halaman Pernyataan Dewan Penguji (khusus hard cover) 
+Halaman Pernyataan Persetujuan Publikasi Skripsi (khusus hard cover) 
+Abstrak (done) 
+Kata Pengantar (not yet) 
+Daftar Isi 
+Daftar Tabel 
+Daftar Gambar 
+Daftar Lampiran
