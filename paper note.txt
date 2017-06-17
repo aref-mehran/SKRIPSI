@@ -1,0 +1,37 @@
+Metodologi
+
+Dataset
+
+Dataset yang digunakan pada penelitian ini dibagi menjadi 2. Dataset pertama didapatkan dari myPersonality (Kosinski, 2015) sebanyak 250 dataset user Facebook dengan kurang lebih 10.000 status yang telah diberikan pelabelan kepribadian berdasarkan Big Five Personality. Distribusi dataset myPersonality berdasarkan jenis kepribadiannya dipresentasikan pada Tabel 1.
+
+
+Tabel 1 distribusi dataset myPersonality
+
+Dataset kedua adalah postingan status dari 150 dataset user Facebook yang didapatkan dengan pengumpulan manual oleh peneliti. Graph API Facebook dimanfaatkan dalam proses pengumpulan dataset tersebut. Pelabelan kepribadian kemudian dilakukan dengan memasukkan postingan user secara manual ke dalam aplikasi applymagicsauce. Tabel 2 merupakan hasil distribusi dataset ini setelah diberi pelabelan jenis kepribadian. 
+
+Tabel 2 distribusi dataset original penelitian
+
+
+Fitur-fitur yang digunakan
+
+Penelitian ini menggunakan beberapa fitur untuk melihat perbandingan hasil dan kemampuannya. Fitur yang digunakan dibedakan untuk masing-masing implementasi pembelajaran. Untuk implementasi machine learning akan menggunakan fitur linguistik  dengan pendekatan closed-vocabulary. Closed vocabulary merupakan fitur yang berbasis dengan jumlah kandungan kata-kata sesuai dengan fitur yang telah ditentukan (predefined features). Untuk pendekatan ini, peneliti menggunakan fitur linguistik LIWC (xxx) dan SPLICE (xxx).
+LIWC yang digunakan pada penelitian ini merupakan versi LIWC2015 yang memiliki 85 fitur yang telah dikembangkan dari versi LIWC2007.
+SPLICE merupakan fitur linguistik yang diciptakan oleh .... dan telah digunakan di beberapa penelitian di bidang ini.
+Selain kedua fitur linguistik di atas, penelitian ini juga akan memanfaatkan penggunaan fitur Social Network Analysis yang diberikan oleh dataset myPersonality yang berupa informasi detail mengenai jaringan pertemanan seorang pengguna. Untuk informasi lengkap mengenai fitur ini dapat dilihat pada (O'Malley & Marsden, 2008).
+Berbeda dengan implementasi machine learning, implementasi deep learning akan dilakukan terpisah dengan menggunakan fitur linguistik pendekatan open vocabulary. Open vocabulary tidak membutuhkan fitur yang telah ditentukan sebelumnya (predefined features). Pendekatan ini akan melakukan eksplorasi otomatis terhadap dataset yang digunakan untuk mencari hubungan antar penggunaan kata dengan kepribadian. Penelitian sebelumnya yang melakukan perbandingan antara kedua pendekatan fitur linguistik ini adalah (Schwartz et al., 2013). 
+
+Preprocessing
+
+Data yang telah dikumpulkan dalam penelitian ini akan melalui tahapan preprocessing terlebih dahulu sebelum dilakukan pengujian untuk membangun model klasifikasi. Tahap preprocessing yang dilakukan yaitu.....
+Khusus untuk status dengan bahasa Indonesia, dilakukan proses preprocessing tambahan secara manual dengan mengganti penggunaan slang words atau kata-kata tidak baku dari status terlebih dahulu untuk kemudian dilanjutkan ke tahap penerjemahan. 
+
+
+Klasifikasi model
+
+Implementasi Machine Learning menggunakan 5 algoritma classifier berbeda yaitu SVM, Naive Bayes, Logistic Regression, Gradient Boosting, dan ...
+Untuk validasi model, peneliti menggunakan metode 10-fold cross validation dengan 
+menggunakan library sci-kit learn.... (jelasin lagi cara kerjanya)
+Peneliti melakukan serangkaian uji coba dengan berbagai skenario untuk melihat bagaimana hasil akurasi setiap algoritma tersebut dalam melakukan prediksi terhadap jenis kepribadian. Uji coba dilakukan dengan menambahkan beberapa proses tambahan untuk meningkatkan akurasi. Proses pertama yang dilakukan adalah dengan Features Selection yang mencoba untuk melakukan filterisasi atau penghapusan fitur-fitur yang digunakan yang dianggap memiliki korelasi rendah terhadap traits dari kepribadian. Proses yang dilakukan selanjutnya adalah melakukan proses Resampling yang bertujuan untuk menyeimbangkan distribusi data dimana pembagian data pada jenis kepribadian memiliki penyebaran yang tidak seimbang seperti pada Tabel 1 dimana traits openness yang memiliki perbandingan 70:30.
+
+Implementasi deep learning
+
