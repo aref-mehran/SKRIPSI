@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<title>My Persona</title>
+<link rel="stylesheet" type="text/css" href="style1.css"/>
+</head>
+<body>
+<script>
+	function getOpenness(){
+		var score = 10;
+		var text;
+		if (score > 50){
+			text = `You have ${score}% of Openness.</br> 
+			You open yourself to new things and creative. 
+			You can accept other criticism quite well and like challenges as well. 
+			You are happy to think about abstract concepts and imagination. There are a lot of things you are curious about and accepted changes.`;
+		} else if (score < 50) {
+			text = `You have ${score}% of Openness.</br> 
+			You dislike changes and not enjoying new things. 
+			You typically don't seek out new experiences. Sometimes you may struggle with abstract thinking and theoretical concepts. 
+			Low in this traits means you are quite conventional and down to earth person.`;
+		} else {
+			text = "";
+		}
+		
+		document.getElementById("openText").innerHTML = text;
+	}
+	
+	function getConscientiousness(){
+		var score = 25;
+		var text;
+		if (score > 50){
+			text = `You have ${score}% of Conscientiousness.</br>
+					You spend most of your time preparing and planning things. 
+					Finish important task right away, organized and mindful of details. You really enjoy having a set schedule.`;
+		} else if (score < 50) {
+			text = `You have ${score}% of Conscientiousness.</br>
+					Your score show you are quite low in this traits which means you dislike structures and schedules. 
+					You tend to procrastinate things and not always put things back to where they belong. 
+					You more likely to be free and do anything as you like.`
+		} else {
+			text = "";
+		}
+		
+		document.getElementById("consText").innerHTML = text;
+	}
+	
+	function getExtraversion(){
+		var score = 50;
+		var text;
+		if (score > 50){
+			text = `You have ${score}% of Extraversion.</br>
+					You are outgoing and tend to gain energy in social situations. You like to meet new people and making friends. 
+					You like to start conversations and enjoy being the center of attention. 
+					People that high in this traits have a wide social circle of friends and acquaintances.`;
+		} else if (score < 50) {
+			text = `You have ${score}% of Extraversion.</br>
+					You are quite low in this traits which means that you prefer solitude or much more time be alone. 
+					You find it difficult to start conversations and making small talk. Carefully think about everything before you speak.
+					Being the center of attention makes you discomfort and You will feel exhausted after socialized a lot. 
+					That's why you have a small circle of friends that you can only feel yourself when you are with them.`
+		} else {
+			text = `You have ${score}% of Extraversion.</br>
+					You are a balance type in this traits. Sometimes you like to socialize, 
+					but sometimes you tend to make yourself far from the crowd and enjoy time alone. You have many friends, but only a few that you are really close with. 
+					You carefully think before speaking to others, especially to the people that you just met.`;
+		}
+		
+		document.getElementById("extraText").innerHTML = text;
+	}
+	
+	function getAgreeableness(){
+		var score = 75;
+		var text;
+		if (score > 50){
+			text = `You have ${score}% of Agreeableness.</br>
+					You have quite a big deal of interest in other people. You like to work as a team and cooperative with others.
+					You always concern about other people and care abouth them. Contributing and helping other people is one of your source of happiness.
+					You have high level of trust, kindness and affection. You can easily manage to accept others mistake and forget about it`;
+		} else if (score < 50) {
+			text = `You have ${score}% of Agreeableness.</br>
+					You don't really like to talk about others and have a little interest in other people's problem. 
+					You tend to like competition and work individually. 
+					You work with your own way and don't care about how other people.`;
+		} else {
+			text = "";
+		}
+		
+		document.getElementById("agreeText").innerHTML = text;
+	}
+	
+	function getNeuroticism(){
+		var score = 100;
+		var text;
+		if (score > 50){
+			text = `You have ${score}% of Neuroticism.</br>
+					You have emotional instability which means a moody person that tend to experience dramatic shifts in mood. You are one of those people that experience a lot of stress and worry about many different things. 
+					You get upset easily and always feel anxious.`;
+		} else if (score < 50) {
+			text = `You have ${score}% of Neuroticism.</br>
+					You can control your emotion well and stable. 
+					You rarely feel sad or depressed because you can easily deal with stress.
+					You always can find the way to relax and not worry about things and problems`;
+		} else {
+			text = "";
+		}
+		
+		document.getElementById("neuroText").innerHTML = text;
+	}
+	window.onload = function all(){
+		getOpenness();
+		getConscientiousness();
+		getExtraversion();
+		getAgreeableness();
+		getNeuroticism();
+	};
+	
+	function getOpenDesc(){
+		document.getElementById("traitDesc").innerHTML = "Your level of Creativity and Curiosity";
+		document.getElementById("myModal").style.display = 'block';
+	}
+	
+	function getConsDesc(){
+		document.getElementById("traitDesc").innerHTML = "Your level of Sociability and Enthusiasm";
+		document.getElementById("myModal").style.display = 'block';
+	}
+	
+	function getExtraDesc(){
+		document.getElementById("traitDesc").innerHTML = "Your level of Organization and Work Ethic";
+		document.getElementById("myModal").style.display = 'block';
+	}
+	
+	function getAgreeDesc(){
+		document.getElementById("traitDesc").innerHTML = "Your level of Friendliness and Kindness";
+		document.getElementById("myModal").style.display = 'block';
+	}
+	
+	function getNeuroDesc(){
+		document.getElementById("traitDesc").innerHTML = "Your level of Calmness and Tranquilty";
+		document.getElementById("myModal").style.display = 'block';
+	}
+	
+	
+	function closeDesc(){
+		document.getElementById("myModal").style.display = 'none';
+	}
+	
+	window.onclick = function(event) {
+		if (event.target == document.getElementById("myModal")) {
+			document.getElementById("myModal").style.display = "none";
+		}
+	}
+</script>
+
+<div id="wrapper">
+	<h1>Big Five Personality<small>From Facebook </small></h1>
+	<h2><a href="http://mypersona.000webhostapp.com/" title="Visit our Homepage">My Persona</a></h2>
+	<div id="content">
+		<h2>Personalities</h2>
+		<ul id="bar">
+			<li id="openness">
+				<div class="top">
+				</div>
+				<div class="bottom">
+					<div class="infobox">
+						<h3>Openness</h3>
+						<p>10%</p>
+					</div>
+				</div>
+			</li>
+			<li id="conscientiousness">
+				<div class="top">
+				</div>
+				<div class="bottom">
+					<div class="infobox">
+						<h3>Conscientiousness</h3>
+						<p>25%</p>
+					</div>
+				</div>
+			</li>
+			<li id="extraversion">
+				<div class="top">
+				</div>
+				<div class="bottom">
+					<div class="infobox">
+						<h3>Extraversion</h3>
+						<p>50%</p>
+					</div>
+				</div>
+			</li>
+			<li id="agreeableness">
+				<div class="top">
+				</div>
+				<div class="bottom">
+					<div class="infobox">
+						<h3>Agreeableness</h3>
+						<p>75%</p>
+					</div>
+				</div>
+			</li>
+			<li id="neuroticism">
+				<div class="top">
+				</div>
+				<div class="bottom">
+					<div class="infobox">
+						<h3>Neuroticism</h3>
+						<p>100%</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+<!-- 		<div id="apple">
+			<img src="images/apple.png" alt="Apple Inc" />
+		</div> -->
+	</div>
+	
+	<div class='traits'>
+		<div class="circle" id='openCircle' onclick='getOpenDesc();'>
+			<div id='teks'>OPENNESS </br>10%</br>Low</p></div> 
+		</div>
+		<div class="circle" id='consCircle' onclick='getConsDesc();'>
+			<div id='teks'>CONSCIENTIOUSNESS </br>25%</br>Low</p></div> 
+		</div>
+		<div class="circle" id='extraCircle' onclick='getExtraDesc();'>
+			<div id='teks'>EXTRAVERSION </br>50%</br>Normal</p></div> 
+		</div>
+		<div class="circle" id='agreeCircle' onclick='getAgreeDesc();'>
+			<div id='teks'>AGREEABLENESS </br>75%</br>High</p></div> 
+		</div>
+		<div class="circle" id='neuroCircle' onclick='getNeuroDesc();'>
+			<div id='teks'>NEUROTICISM </br>100%</br>High</p></div> 
+		</div>
+	</div>
+	
+	<div id="myModal" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+		<span id='close' onclick='closeDesc()'>&times;</span>
+		<p id='traitDesc'></p>
+	  </div>
+	</div>
+	
+	<div class ='info'>
+		<div class='notes'>
+			<h2 id='open'>Openness - 10%</h2>
+			<p id='openText'></p>
+			<img class='noteIcon' src="assets/personality icons/openness colored.png" alt="Openness Icon" />
+		</div>
+		<div class='notes'>
+			<h2 id='cons'>Conscientiousness - 25%</h2>
+			<p id='consText'>You have 25% of Conscientiousness.</br></p>
+		<img class='noteIcon' src="assets/personality icons/conscientiousness2 colored.png" alt="Conscientiousness Icon" />
+
+		</div>
+		<div class='notes'>
+			<h2 id='extra'>Extraversion - 50%</h2>
+			<p id ="extraText">You have 50% of Extraversion.<br/></p>		
+		<img class='noteIcon' src="assets/personality icons/extraversion colored.png" alt="Extraversion Icon" />
+		</div>
+		<div class='notes' id='agreeNote'>
+			<h2 id='agree'>Agreeableness - 75%</h2>
+			<p id="agreeText">You have 75% of Agreeableness.<br/></p>
+		<img class='noteIcon' src="assets/personality icons/agreeableness colored.png" alt="Agreeabless Icon" />
+		</div>
+		<div class='notes'>
+			<h2 id='neuro'>Neuroticism - 100%</h2>
+			<p id="neuroText">You have 100% of Neuroticism.<br/></p>
+		<img class='noteIcon' src="assets/personality icons/neuroticism colored.png" alt="Neuroticism Icon" />
+		</div>
+	</div>
+</div>
+</body>
+</html>
