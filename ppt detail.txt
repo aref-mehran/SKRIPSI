@@ -24,6 +24,7 @@ runtime deep learning (MLP dan CNN 1D dibawah 1 menit) (LSTM agak lama, diatas 2
 FEATURES SELECTION
 features selection pakai chi-square
 cara menentukan batas features selection: best setting
+setelah dilakukan feature selection: LIWC(7 features), SPLICE(60 features), SNA(5 features)
 
 RESAMPLING
 resampling pakai library imbalanced_learn, oversampling pakai SMOTE, undersampling pakai ClusterCentroids
