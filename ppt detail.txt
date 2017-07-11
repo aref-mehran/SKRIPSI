@@ -8,12 +8,12 @@ FEATURES
 Open Vocabulary: GloVe (6 miliar tokens, 400 ribu kata, 100 dimensi vektor) (project dari NLP, Stanford)
 
 MACHINE LEARNING
-Machine learning pakai library Scikit-Learn
+Machine learning pakai bahasa python 2.7 library Scikit-Learn
 5 algoritma pakai settingan parameter default
 runtime machine learning di bawah 10s
 
 DEEP LEARNING
-Deep learning pakai library Keras backend Theano
+Deep learning pakai bahasa python 2.7 library Keras backend Theano
 layer dan settingan 5 arsitektur deep learning standard
 data_testing 20% dari data_training
 batch_size = 32
@@ -24,6 +24,7 @@ runtime deep learning (MLP dan CNN 1D dibawah 1 menit) (LSTM agak lama, diatas 2
 FEATURES SELECTION
 features selection pakai chi-square
 cara menentukan batas features selection: best setting
+batas nilai features selection: FB: 2.234e-0	LIWC: 5.541e-05	SPLICE: 3.319e-04
 setelah dilakukan feature selection: LIWC(7 features), SPLICE(60 features), SNA(5 features)
 
 RESAMPLING
