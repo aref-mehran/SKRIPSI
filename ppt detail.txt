@@ -1,0 +1,39 @@
+WORD PREPROCESSING
+Remove Names: myPersonality (semua nama sudah diganti jadi *PROPNAME*)
+			  Manual Gathering (Vincent, Andre, dkk... nama diremove pakai library NLTK (Natural Language Toolkit))
+Stemming	: Merubah kata menjadi kata dasar (Building->Build; Dogs->Dog; Talked->Talk)
+Remove Stopword: pakai library NLTK, terdapat 153 stopwords (i, you, we, they, dll) (a, an, the, in, at, dll) (your, yours, yourself, themselves, dll)
+
+FEATURES
+Open Vocabulary: GloVe (6 miliar tokens, 400 ribu kata, 100 dimensi vektor) (project dari NLP, Stanford)
+
+MACHINE LEARNING
+Machine learning pakai library Scikit-Learn
+5 algoritma pakai settingan parameter default
+runtime machine learning di bawah 10s
+
+DEEP LEARNING
+Deep learning pakai library Keras backend Theano
+layer dan settingan 5 arsitektur deep learning standard
+data_testing 20% dari data_training
+batch_size = 32
+epochs = 10
+deep learning dijalankan pakai CPU bukan GPU (karna laptop pakai AMD)
+runtime deep learning (MLP dan CNN 1D dibawah 1 menit) (LSTM agak lama, diatas 2-3 menit)
+
+FEATURES SELECTION
+features selection pakai chi-square
+cara menentukan batas features selection: best setting
+
+RESAMPLING
+resampling pakai library imbalanced_learn, oversampling pakai SMOTE, undersampling pakai ClusterCentroids
+oversampling dan undersampling nambah waktu runtime kira" nambah 1-2 menit
+
+cara kerja 10-fold cross validation:
+dataset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+fold-1: data_training = [2, 3, 4, 5, 6, 7, 8, 9, 10]	data_testing = [1]
+fold-2: data_training = [1, 3, 4, 5, 6, 7, 8, 9, 10]	data_testing = [2]
+fold-3: data_training = [1, 2, 4, 5, 6, 7, 8, 9, 10]	data_testing = [3]
+...
+fold-9: data_training = [1, 2, 3, 4, 5, 6, 7, 8, 10]	data_testing = [9]
+fold-10: data_training = [1, 2, 3, 4, 5, 6, 7, 8, 9]	data_testing = [10]
