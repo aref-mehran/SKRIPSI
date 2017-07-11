@@ -5,6 +5,7 @@ Stemming	: Merubah kata menjadi kata dasar (Building->Build; Dogs->Dog; Talked->
 Remove Stopword: pakai library NLTK, terdapat 153 stopwords (i, you, we, they, dll) (a, an, the, in, at, dll) (your, yours, yourself, themselves, dll)
 
 FEATURES
+Closed Vocabulary: LIWC(Pennebaker, 2015) SPLICE(Moffit et al., 2012) SNA(Kosinski et al., 2015)
 Open Vocabulary: GloVe (6 miliar tokens, 400 ribu kata, 100 dimensi vektor) (project dari NLP, Stanford)
 
 MACHINE LEARNING
