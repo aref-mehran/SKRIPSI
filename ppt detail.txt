@@ -1,7 +1,7 @@
 WORD PREPROCESSING
 Remove Names: myPersonality (semua nama sudah diganti jadi *PROPNAME*)
 			  Manual Gathering (Vincent, Andre, dkk... nama diremove pakai library NLTK (Natural Language Toolkit))
-Stemming	: Merubah kata menjadi kata dasar (Building->Build; Dogs->Dog; Talked->Talk)
+Stemming	: Merubah kata menjadi kata dasar (Building->Build; Dogs->Dog; Talked->Talk). Pakai library NLTK
 Remove Stopword: pakai library NLTK, terdapat 153 stopwords (i, you, we, they, dll) (a, an, the, in, at, dll) (your, yours, yourself, themselves, dll)
 
 FEATURES
@@ -23,13 +23,13 @@ deep learning dijalankan pakai CPU bukan GPU (karna laptop pakai AMD)
 runtime deep learning (MLP dan CNN 1D dibawah 1 menit) (LSTM agak lama, diatas 2-3 menit)
 
 FEATURES SELECTION
-features selection pakai chi-square
+features selection pakai library scikit-learn dengan teknik chi-square
 cara menentukan batas features selection: best setting
-batas nilai features selection: FB: 2.234e-0	LIWC: 5.541e-05	SPLICE: 3.319e-04
+batas nilai features selection: FB: 2.234e-0	LIWC: 5.541e-05   SPLICE: 3.319e-04
 setelah dilakukan feature selection: LIWC(7 features), SPLICE(60 features), SNA(5 features)
 
 RESAMPLING
-resampling pakai library imbalanced_learn, oversampling pakai SMOTE, undersampling pakai ClusterCentroids
+resampling pakai library imbalanced_learn, oversampling dengan teknik SMOTE, undersampling dengan teknik ClusterCentroids
 oversampling dan undersampling nambah waktu runtime kira" nambah 1-2 menit
 
 cara kerja 10-fold cross validation:
