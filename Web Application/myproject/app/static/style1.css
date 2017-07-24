@@ -1,3 +1,5 @@
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 /* BASIC RESET */
 ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,macbook,p,blockquote,fieldset,input{margin:0; padding:0;}
@@ -13,7 +15,7 @@ h2 a:hover { color: #90bcd0; }
 .break { clear:both; }
 
 /* WRAPPER */
-#wrapper { width:800px; margin:40px auto; margin-top:100px; }
+#wrapper { width:800px; margin:0px auto; }
 
 /* CONTENT */
 #content { }
@@ -93,6 +95,38 @@ h2 a:hover { color: #90bcd0; }
 
 #apple { clear:both; margin-top:-70px; position:relative; z-index:-999; }
 #apple p { float:right; padding-top:247px; }
+
+
+/* start da css for da buttons */
+.btn {
+  position:fixed;
+  top:0;
+  left:0;
+  font-family: 'Open Sans', 'sans-serif';
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.red {
+  background-color: #e74c3c;
+  box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+.red:hover {
+  background-color: #FF6656;
+}
 
 .traits{
 	width: 900px;
