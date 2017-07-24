@@ -42,7 +42,7 @@
 					document.getElementById("textAccessToken").style.visibility = "visible";
 				}*/
 				//if (document.getElementById("buttonGetPostsTestingUser") != null) document.getElementById("buttonGetPostsTestingUser").style.visibility = "visible";
-				if (document.getElementById("buttonNotTestingUser") != null) document.getElementById("buttonNotTestingUser").style.visibility = "visible";
+				//if (document.getElementById("buttonNotTestingUser") != null) document.getElementById("buttonNotTestingUser").style.visibility = "visible";
 				//if (document.getElementById("buttonGetPosts") != null) document.getElementById("buttonGetPosts").style.visibility = "visible";
 				if (document.getElementById("labelUserPosts") != null)
 				{
@@ -59,7 +59,7 @@
 				if (document.getElementById("labelAccessToken") != null) document.getElementById("labelAccessToken").style.visibility = "hidden";
 				if (document.getElementById("textAccessToken") != null) document.getElementById("textAccessToken").style.visibility = "hidden";
 				if (document.getElementById("buttonGetPostsTestingUser") != null) document.getElementById("buttonGetPostsTestingUser").style.visibility = "hidden";
-				if (document.getElementById("buttonNotTestingUser") != null) document.getElementById("buttonNotTestingUser").style.visibility = "hidden";
+				//if (document.getElementById("buttonNotTestingUser") != null) document.getElementById("buttonNotTestingUser").style.visibility = "hidden";
 				if (document.getElementById("buttonGetPosts") != null) document.getElementById("buttonGetPosts").style.visibility = "hidden";
 				if (document.getElementById("labelUserPosts") != null) document.getElementById("labelUserPosts").style.visibility = "hidden";
 				if (document.getElementById("spinner") != null) document.getElementById("spinner").style.visibility = "hidden";
@@ -128,7 +128,22 @@
 				
 				if (userProfile.user_id == "1661673027178003" || userProfile.user_id == "10207321938441730" || userProfile.user_id == "815190368632753")
 				{
+					document.getElementById("myContent").className = "content";
+					if (document.getElementById("buttonGetPostsTestingUser") != null) document.getElementById("buttonGetPostsTestingUser").style.display = "inline";
 					if (document.getElementById("buttonGetPostsTestingUser") != null) document.getElementById("buttonGetPostsTestingUser").style.visibility = "visible";
+				}
+				else
+				{
+					document.getElementById("myContent").className = "newcontent";
+					if (document.getElementById("buttonGetPostsTestingUser") != null) document.getElementById("buttonGetPostsTestingUser").style.display = "none";
+					if (document.getElementById("linkAccessToken") != null) document.getElementById("linkAccessToken").style.visibility = "visible";
+					if (document.getElementById("labelAccessToken") != null) document.getElementById("labelAccessToken").style.visibility = "visible";
+					if (document.getElementById("textAccessToken") != null)
+					{
+						document.getElementById("textAccessToken").value = "";
+						document.getElementById("textAccessToken").style.visibility = "visible";
+					}
+					if (document.getElementById("buttonGetPosts") != null) document.getElementById("buttonGetPosts").style.visibility = "visible";
 				}
 			});
 			
@@ -285,7 +300,7 @@
 			document.getElementById("textAccessToken").focus();
 		}
 		
-		function notTestingUser()
+		/*function notTestingUser()
 		{
 			if (document.getElementById("buttonNotTestingUser").innerHTML == "Not a testing user?")
 			{
@@ -312,7 +327,7 @@
 				document.getElementById("buttonGetPostsTestingUser").style.display = "inline";
 				document.getElementById("buttonNotTestingUser").style.display = "inline";
 				document.getElementById("buttonTestingUser").style.display = "none";
-		}
+		}*/
 		
 		function getPostsTestingUser()
 		{
@@ -377,8 +392,8 @@
 					</div>
 					
 					<button class="action-button shadow animate green" id="buttonGetPostsTestingUser" type="button" style="visibility:hidden" onclick="getPostsTestingUser();">Get your status updates</button>
-					<button class="action-button shadow animate red" id="buttonNotTestingUser" type="button" style="visibility:hidden" onclick="notTestingUser();">Not a testing user?</button>
-					<button class="action-button shadow animate blue" id="buttonTestingUser" type="button" style="visibility:hidden" onclick="testingUser();">Testing user?</button>
+					<!--<button class="action-button shadow animate red" id="buttonNotTestingUser" type="button" style="visibility:hidden" onclick="notTestingUser();">Not a testing user?</button>-->
+					<!--<button class="action-button shadow animate blue" id="buttonTestingUser" type="button" style="visibility:hidden" onclick="testingUser();">Testing user?</button>-->
 					
 					<div class="statbox">
 						<a id="linkAccessToken" style="visibility:hidden; color:white; cursor:pointer;" onclick="getAccessToken();">Get your access token here</a>
