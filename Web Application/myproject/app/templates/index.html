@@ -289,22 +289,29 @@
 		{
 			if (document.getElementById("buttonNotTestingUser").innerHTML == "Not a testing user?")
 			{
+				document.getElementById("myContent").className = "newcontent";
 				document.getElementById("linkAccessToken").style.visibility = "visible";
 				document.getElementById("labelAccessToken").style.visibility = "visible";
 				document.getElementById("textAccessToken").style.visibility = "visible";
 				document.getElementById("buttonGetPosts").style.visibility = "visible";
-				document.getElementById("buttonGetPostsTestingUser").style.visibility = "hidden";
-				document.getElementById("buttonNotTestingUser").innerHTML = "Testing user?";
+				document.getElementById("buttonGetPostsTestingUser").style.display = "none";
+				document.getElementById("buttonNotTestingUser").style.display = "none";
+				document.getElementById("buttonTestingUser").style.visibility = "visible";
+				document.getElementById("buttonTestingUser").style.display = "inline";
+				document.getElementById("buttonTestingUser").style.margin = "-50px 10px;"
 			}
-			else
-			{
+		}
+		
+		function testingUser () 
+		{
+				document.getElementById("myContent").className = "content";
 				document.getElementById("linkAccessToken").style.visibility = "hidden";
 				document.getElementById("labelAccessToken").style.visibility = "hidden";
 				document.getElementById("textAccessToken").style.visibility = "hidden";
 				document.getElementById("buttonGetPosts").style.visibility = "hidden";
-				document.getElementById("buttonGetPostsTestingUser").style.visibility = "visible";
-				document.getElementById("buttonNotTestingUser").innerHTML = "Not a testing user?";
-			}
+				document.getElementById("buttonGetPostsTestingUser").style.display = "inline";
+				document.getElementById("buttonNotTestingUser").style.display = "inline";
+				document.getElementById("buttonTestingUser").style.display = "none";
 		}
 		
 		function getPostsTestingUser()
@@ -360,17 +367,18 @@
 	</script>
 	<div id="bg"></div>
 		<div class="wrapper">
-			<div class="content">
-				<form action="" >
+			<div id="myContent" class="content">
 				<img src="./static/assets/logo.png" id ="logo" alt="Logo">
 					<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false" scope="public_profile,email,user_friends,user_posts" onlogin="checkLoginState();"></div>
-					<div id="labelUserProfile" style="visibility:hidden"></div>
-					<img id="imgUserPicture1" style="visibility:hidden">
-					<br/>
 					
-					<button id="buttonGetPostsTestingUser" type="button" style="visibility:hidden" onclick="getPostsTestingUser();">Get your status updates</button>
-					<br/>
-					<button id="buttonNotTestingUser" type="button" style="visibility:hidden" onclick="notTestingUser();">Not a testing user?</button>
+					<div class="accountProfile">
+						<p id="labelUserProfile" style="visibility:hidden"></p>
+						<img id="imgUserPicture1" style="visibility:hidden">
+					</div>
+					
+					<button class="action-button shadow animate green" id="buttonGetPostsTestingUser" type="button" style="visibility:hidden" onclick="getPostsTestingUser();">Get your status updates</button>
+					<button class="action-button shadow animate red" id="buttonNotTestingUser" type="button" style="visibility:hidden" onclick="notTestingUser();">Not a testing user?</button>
+					<button class="action-button shadow animate blue" id="buttonTestingUser" type="button" style="visibility:hidden" onclick="testingUser();">Testing user?</button>
 					
 					<div class="statbox">
 						<a id="linkAccessToken" style="visibility:hidden; color:white; cursor:pointer;" onclick="getAccessToken();">Get your access token here</a>
@@ -381,7 +389,6 @@
 							<button id="buttonGetPosts" type="button" style="visibility:hidden" onclick="checkUserPosts();">Get your status updates</button>
 						</div>
 					</div>
-				</form>
 				
 				<form action = "http://localhost:5000/status_update" method = "post">
 					<p><input type="text" id="label_status_update" name="status_update" style="visibility:hidden"/></p>
@@ -396,6 +403,6 @@
 		</div>
 </body>
 <footer>
-	<a href="http://mypersona.000webhostapp.com/privacypolicy.htm" style="position: relative; color:white;">Privacy Policy</a>
+	<a id='privacyPolicy' href="http://mypersona.000webhostapp.com/privacypolicy.htm">Privacy Policy</a>
 </footer>
 </html>
