@@ -15,7 +15,6 @@ body {
   height: 100%;
   background: url(img/home3.jpg) no-repeat center center fixed;
   background-size: cover;
-  -webkit-filter: blur(5px);  
 }
 
 
@@ -44,16 +43,35 @@ html {
   text-align:center;
 }
 
+.newcontent {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px 22px;
+  border: 1px solid;
+  background: rgba(130,130,130,.3);
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+  text-align:center;
+}
+
 
 #logo{
-margin-top:20px;
-margin-bottom:30px;
-position:relative;
-width:250px;
+	margin-top:20px;
+	margin-bottom:30px;
+	position:relative;
+	width:250px;
 }
 
 .fb-login-button{
 	margin:30px;
+}
+
+.accountProfile{
+	margin-bottom:30px;
 }
 
 #labelUserProfile{
@@ -107,11 +125,61 @@ width:250px;
 	cursor: pointer;
 }
 
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 10px 5px;
+	margin: 0px 10px 10px 0px;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 12px;
+	color: #FFF;
+	text-decoration: none;
+	width: 170px;
+}
+
+.blue
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+.green
+{
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+
+.red
+{
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+
+.action-button:hover{
+	cursor: pointer;
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
 #labelUserPosts{
 	font-size: 20px;
 	color: white;
 }
-
 
 #result{
   position: relative;
@@ -142,6 +210,27 @@ width:250px;
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+#privacyPolicy {
+	text-decoration:none;
+	font: menu;
+	font-size: 16px;
+	
+	color:white;
+}
+
+#privacyPolicy {
+	font-family: 'Montserrat', Helvetica, sans-serif;
+	position: fixed;
+    bottom: 0;
+    left: 0;
+	border-radius: 100px;
+	color: #fff;
+	padding: 10px 10px;
+	text-decoration: none;
+	font-size: 14px;
+	margin: 0 15px;
 }
 
 
