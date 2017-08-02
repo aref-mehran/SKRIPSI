@@ -1,4 +1,4 @@
-DONE		Algoritma machine learning dan deep learning disampaikan pada ruang lingkup
-DONE		Hal 1, perbedaan social media dan social networks
+DONE		Algoritma machine learning dan deep learning disampaikan pada ruang lingkup (BAB 1.3 Ruang Lingkup p.4)
+DONE		Hal 1, perbedaan social media dan social networks (BAB 1.1 Latar Belakang p.1-2)
 
-ON DOING	Beberapa penulisan kutipan dan kata-kata diperbaiki
+ON DOING	Beberapa penulisan kutipan dan kata-kata diperbaiki (BAB 2)
