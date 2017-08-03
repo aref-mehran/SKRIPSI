@@ -1,15 +1,16 @@
 DENNISE
 ON DOING	Beberapa penulisan kutipan dan kata-kata diperbaiki
-DONE		Algoritma machine learning dan deep learning disampaikan pada ruang lingkup
-ON DOING	Jangan gunakan bullet dalam penulisan, pergunakan numbering saja
-DONE		Perbaiki kesimpulan no. 2, tambahkan bukti dengan penelitian terkait di bab 3
-DONE		Hal 1, perbedaan social media dan social networks
 ON DOING	Tambahkan grafik yang membandingkan antara algoritma yang digunakan
-?ON DOING	Rumus/perhitungan algoritma dijelaskan pada bab 2 dan bab 3
-?ON DOING	Saran di nomor 1-3 ditambahkan dalam GDD
+ON DOING	Rumus/perhitungan algoritma dijelaskan pada bab 2 dan bab 3
 ON DOING	Perbaiki flow chart kerangka berpikir
-ON DOING	Gambar dikasih border
-ON DOING	Ganti dimana jadi di mana
+
+DONE	Algoritma machine learning dan deep learning 	disampaikan pada ruang lingkup
+DONE	Jangan gunakan bullet dalam penulisan, pergunakan 	numbering saja
+DONE	Perbaiki kesimpulan no. 2, tambahkan bukti dengan 	penelitian terkait di bab 3
+DONE	Hal 1, perbedaan social media dan social networks
+DONE	Gambar dikasih border
+DONE	Ganti dimana jadi di mana
+DELETE	Saran di nomor 1-3 ditambahkan dalam GDD
 
 
 

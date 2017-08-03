@@ -1,6 +1,16 @@
-DONE		Perbaiki kesimpulan no. 2, tambahkan bukti dengan penelitian terkait di bab 3
+Done	Perbaiki kesimpulan no. 2, tambahkan bukti dengan penelitian terkait di bab 3
 
-ON DOING	Rumus/perhitungan algoritma dijelaskan pada bab 2 dan bab 3
+Done 	Bulleting numbering 
+	Bab 1 (Hal 6)
+	Bab 3 (Hal 93, 95) 
+	Bab 4 (Hal 103-104)
+
+Done ubah kata "dimana"
+	Bab 1,3,4,5
+
+Done tambah border gambar
+	Bab 1,3,4,5
+	
 
 
 
