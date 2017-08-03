@@ -1,5 +1,5 @@
 DENNISE
-ON DOING	Beberapa penulisan kutipan dan kata-kata diperbaiki
+ALMOST DONE	Beberapa penulisan kutipan dan kata-kata diperbaiki
 ON DOING	Rumus/perhitungan algoritma dijelaskan pada bab 2 dan bab 3
 ON DOING	Perbaiki flow chart kerangka berpikir
 
@@ -26,6 +26,6 @@ ON DOING	Tambahkan teori Facebook
 
 
 TYPO
-ON DOING	Bab 1.6 Sistematika Penulisan (BAB 2 Tinjauan Pustaka)
+DONE	Bab 1.6 Sistematika Penulisan (BAB 2 Tinjauan Pustaka)
 ON DOING	Machine learning -> traditional machine learning
 ON DOING	Cocokin daftar isi, gambar, tabel, lampiran, dll

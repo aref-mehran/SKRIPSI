@@ -1,4 +1,29 @@
 DONE		Algoritma machine learning dan deep learning disampaikan pada ruang lingkup (BAB 1.3 Ruang Lingkup p.4)
 DONE		Hal 1, perbedaan social media dan social networks (BAB 1.1 Latar Belakang p.1-2)
 
-ON DOING	Beberapa penulisan kutipan dan kata-kata diperbaiki (BAB 2)
+ALMOST DONE	Beberapa penulisan kutipan dan kata-kata diperbaiki (BAB 2)
+
+Halaman belum diketahui:
+Nilsson (2009
+Turban, McLean, & Wetherbe, 1999
+Duda, Hart, & Stork, 2000
+Wijaya et al. (2016)
+Manning, 2008
+
+Tidak ada halaman:
+Ye, Janardan, & Li, 2005 (http://papers.nips.cc/paper/2547-two-dimensional-linear-discriminant-analysis.pdf)
+Zhang et al., 2014 (http://bsp.brain.riken.jp/publications/2014/AgregationSLDA.pdf)
+Grefenstette et al., 2014 (https://arxiv.org/pdf/1404.7296.pdf)
+Shen et al., 2014 (http://cslt.riit.tsinghua.edu.cn/mediawiki/images/b/b7/2014_-_A_Latent_Semantic_Model_with_Convolutional-Pooling_Structure_for_Information_Retrieval_-_Report.pdf)
+Scarlet.Stanford, 2013 (http://scarlet.stanford.edu/teach/index.php/An_Introduction_to_Convolutional_Neural_Networks)
+Mahoney, 2017 (http://www.mattmahoney.net/dc/text.html#1218)
+Graves, Mohammed, & Hinton, 2013 (https://arxiv.org/pdf/1303.5778.pdf)?)
+Cho et al. pada tahun 2014 (https://arxiv.org/pdf/1406.1078.pdf)
+Apache, n.d. (https://httpd.apache.org/)
+Booth, 2004 (http://www.w3.org/TR/ws-arch/)
+Moffit & Giboney, 2012 (http://splice.cmi.arizona.edu/)
+Bachrach et al., 2012 (Paper Reference/Personality and Patterns of Facebook Usage.pdf)
+Facebook, 2012 (http://newsroom.fb.com)
+Kosinski et al, 2013 (http://www.pnas.org/content/110/15/5802.full)
+Celli et al., 2013 (mypersonality_final\celli-al_wcpr13.pdf)
+Alam, Stepanov & Riccardi, 2013 (Paper Reference\alam_wcpr13.pdf)
