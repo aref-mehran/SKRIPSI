@@ -11,7 +11,7 @@ Done ubah kata "dimana"
 Done tambah border gambar
 	Bab 1,3,4,5
 	
-Done Tambahkan grafik yang membandingkan antara algoritma yang digunakan (sisa dijelasin)
+Done Tambahkan grafik yang membandingkan antara algoritma yang digunakan (hal 142, 156, 158)
 
 Done Tambahin teori Facebook
 
