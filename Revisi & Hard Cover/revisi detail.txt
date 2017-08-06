@@ -17,7 +17,7 @@ DELETE	Saran di nomor 1-3 ditambahkan dalam GDD
 BUDI
 ?ON DOING	Buang subbab 2.1 Landasan Teori
 ON DOING	Buang teori yang mendasar seperti algoritma, notepad++, excel 2010, dll
-ON DOING	Tambahkan teori Facebook
+DONE	Tambahkan teori Facebook
 ?ON DOING	Tambahkan teori/pustaka corpus yang digunakan untuk cek big five (th 2013)
 ?KRITIK		Tidak ada kuesioner awal
 ?KRITIK		Responden wawancara terlalu sedikit
