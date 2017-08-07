@@ -5,10 +5,10 @@ ALMOST DONE	Beberapa penulisan kutipan dan kata-kata diperbaiki (BAB 2)
 
 Halaman belum diketahui:
 Nilsson (2009
-Turban, McLean, & Wetherbe, 1999
-Duda, Hart, & Stork, 2000
+Turban, McLean, & Wetherbe, 1999 (Deleted)
+Duda, Hart, & Stork, 2000 (Deleted)
 Wijaya et al. (2016)
-Manning, 2008
+Manning, 2008 (Deleted)
 
 Tidak ada halaman:
 Ye, Janardan, & Li, 2005 (http://papers.nips.cc/paper/2547-two-dimensional-linear-discriminant-analysis.pdf)
