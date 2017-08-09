@@ -5,15 +5,15 @@ ON DOING	Poster
 ON DOING	Video aplikasi
 ON DOING	Working paper dan Abstrak
 
-Hard Cover:
+HARD COVER:
 DONE		Halaman judul luar
 DONE		Halaman judul dalam
 ON DOING	Halaman persetujuan hard cover (fotokopi)
 ON DOING	Halaman persetujuan dewan penguji (fotokopi)
 DONE		Halaman pernyataan persetujuan publikasi skripsi (fotokopi)
-ON DOING	Halaman abstrak
+DONE		Halaman abstrak
 DONE		Halaman prakata
-ON DOING	Halaman daftar isi
+ON DOING	Daftar isi
 ON DOING	Daftar tabel
 ON DOING	Daftar gambar
 ON DOING	Daftar lampiran
@@ -22,23 +22,23 @@ ON DOING	Halaman referensi
 DONE		Halaman riwayat hidup
 DONE		Halaman lampiran
 
-Berkas:
+BERKAS:
 DONE		Judul luar
 DONE		Judul dalam
 ON DOING	Halaman persetujuan hard cover (asli)
 ON DOING	Halaman persetujuan dewan penguji (asli)
 DONE		Halaman pernyataan persetujuan publikasi skripsi (asli)
-ON DOING	Halaman abstrak
+DONE		Halaman abstrak
 DONE		Prakata
 ON DOING	Daftar isi
 ON DOING	Daftar tabel
 ON DOING	Daftar gambar
 ON DOING	Daftar lampiran
 
-Upload file:
+UPLOAD FILE THESIS:
 DONE		Cover (.doc)
 DONE		Halaman persetujuan dosen pembimbing (.doc)
-ON DOING	Abstrak (.doc)
+DONE		Abstrak (.doc)
 ON DOING	Daftar isi (.doc)
 ON DOING	Bab 1 (.doc)
 ON DOING	Bab 2 (.doc)
