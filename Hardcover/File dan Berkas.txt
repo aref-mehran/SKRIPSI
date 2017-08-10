@@ -3,7 +3,7 @@ ON DOING	Penulisan skripsi
 DONE		Source code
 ON DOING	Poster
 ON DOING	Video aplikasi
-ON DOING	Working paper dan Abstrak
+DONE		Working paper dan Abstrak
 
 HARD COVER:
 DONE		Halaman judul luar
@@ -48,6 +48,6 @@ ON DOING	Bab 5 (.doc)
 ON DOING	Referensi (.doc)
 DONE		Lampiran (.doc)
 DONE		Ppt presentasi (.ppt)
-ON DOING	Working paper (.doc)
+DONE		Working paper (.doc)
 DONE		Prosedur menjalankan program/alat  (.doc)
 DONE		Program aplikasi (.zip)
