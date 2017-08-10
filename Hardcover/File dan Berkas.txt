@@ -1,52 +1,52 @@
 CD:
-ON DOING	Penulisan skripsi
+DONE		Penulisan skripsi
 DONE		Source code
-ON DOING	Poster
+DONE		Poster
 ON DOING	Video aplikasi
 DONE		Working paper dan Abstrak
 
 HARD COVER:
 DONE		Halaman judul luar
 DONE		Halaman judul dalam
-ON DOING	Halaman persetujuan hard cover (fotokopi)
-ON DOING	Halaman persetujuan dewan penguji (fotokopi)
+DONE		Halaman persetujuan hard cover (fotokopi)
+DONE		Halaman persetujuan dewan penguji (fotokopi)
 DONE		Halaman pernyataan persetujuan publikasi skripsi (fotokopi)
 DONE		Halaman abstrak
 DONE		Halaman prakata
-ON DOING	Daftar isi
-ON DOING	Daftar tabel
-ON DOING	Daftar gambar
-ON DOING	Daftar lampiran
-ON DOING	Halaman isi (bab1-bab5)
-ON DOING	Halaman referensi
+DONE		Daftar isi
+DONE		Daftar tabel
+DONE		Daftar gambar
+DONE		Daftar lampiran
+DONE		Halaman isi (bab1-bab5)
+DONE		Halaman referensi
 DONE		Halaman riwayat hidup
 DONE		Halaman lampiran
+DONE		Surat non-survey
 
 BERKAS:
 DONE		Judul luar
 DONE		Judul dalam
-ON DOING	Halaman persetujuan hard cover (asli)
-ON DOING	Halaman persetujuan dewan penguji (asli)
+DONE		Halaman persetujuan hard cover (asli)
+DONE		Halaman persetujuan dewan penguji (asli)
 DONE		Halaman pernyataan persetujuan publikasi skripsi (asli)
 DONE		Halaman abstrak
 DONE		Prakata
-ON DOING	Daftar isi
-ON DOING	Daftar tabel
-ON DOING	Daftar gambar
-ON DOING	Daftar lampiran
+DONE		Daftar isi
+DONE		Daftar tabel
+DONE		Daftar gambar
+DONE		Daftar lampiran
 
 UPLOAD FILE THESIS:
 DONE		Cover (.doc)
 DONE		Halaman persetujuan dosen pembimbing (.doc)
 DONE		Abstrak (.doc)
-ON DOING	Daftar isi (.doc)
-ON DOING	Bab 1 (.doc)
-ON DOING	Bab 2 (.doc)
-ON DOING	Bab 3 (.doc)
-ON DOING	Bab 4 (.doc)
-ON DOING	Bab 5 (.doc)
-ON DOING	Referensi (.doc)
-DONE		Lampiran (.doc)
+DONE		Daftar isi (.doc)
+DONE		Bab 1 (.doc)
+DONE		Bab 2 (.doc)
+DONE		Bab 3 (.doc)
+DONE		Bab 4 (.doc)
+DONE		Bab 5 (.doc)
+DONE		Referensi dan Lampiran(.doc)
 DONE		Ppt presentasi (.ppt)
 DONE		Working paper (.doc)
 DONE		Prosedur menjalankan program/alat  (.doc)
