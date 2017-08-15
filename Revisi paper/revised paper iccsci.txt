@@ -1,0 +1,36 @@
+Comment for Authors:
+
+The paper is about classifying the personality using user face-book status. The topic is really interesting, but the critical step in data collection is not explaining well. There are some suggestion to improve the paper:
+1. Paper should use Vancouver Embellish format. Please revise based on this style.
+	(DONE - citation format from [1] to 1(superscript) and page 7-8 References)
+	
+2. Because of small number of data, the advanced deep learning did not show significance difference to traditional ML . Please remember that the main requirement of deep learning is quite a lot of data, because DL need to data pre-processing and extracting features automatically. The suitable approach for limited data is bayesian, and by using some reasonable assumption this approach can surpass DL in small data case.
+	(Thank you for the input, we will explore more in some references)
+
+- What do you mean by “other previous researches used older machine learning algorithm in building their models”? You have to clearly explained this and why any learning methods which is not DNN considered to be traditional.
+	(DONE - page 4 - by adding "In this research, we consider all machine learning algorithms used above as the traditional machine learning as it will be differentiated and compared to deep learning algorithm which is actually subset from machine learning methods but it differs in the use of neural networks that contain more than one hidden layer.")
+	
+- You have to explain a  little bit about the difference between MLP, LSTM. GRU etc and give some references to it.
+	(DONE - page 4 - by adding "MLP consists of input, hidden, and output layers which is using a basic algorithm for training, known as backpropagation. CNN 1D has the same layers as MLP, but there are two more layers before the MLP’s layers namely convolutional layers and max pooling layers. GRU is a simplification of LSTM, they used peephole connections and output activation functions, and coupled the input and the forget gate into an update gate"
+	
+- There are some grammatical errors, please check more carefully, such as missing “the/a” or plural/singular.
+	(page 1 abstract from "various information is shared" to "various informations are shared")
+	(page 1 introduction from "thoughts through status" to "thoughts through statuses")
+	(page 4 from "but it differs is in" to "but it differs in")
+	(page 4 from "Features Selection that tried to" to "Features Selection that try to")
+	(page 3 from "The second dataset is the status" to "The second dataset is the statuses")
+	(page 5 from "By observing all average accuracy" to "By observing all average accuracies")
+	
+- Here : “Studies in the field of psychology showed that there is a correlation between personality and the linguistic behavior of a person” -> you need some references cited here to strength your claim.
+	(DONE - page 2 - by adding citation 2 and 3)
+- For the second database, it is not clear how do you make the personality label in your data, is it conducted by some experts? And what is the Apply Magic Sauce application?
+	(DONE - page 3 - by adding "Apply Magic Sauce application is a web application build by Cambridge Psychometrics Centre to predict psychological traits from digital footprints of human behavior. Their models are based on over 6 million social media profiles and matching scores on psychometrics tests. They have published their methods in the Proceedings of the National Academy of Sciences11 and proven to predict someone better than their friends or partners12. Apply Magic Sauce open for any researches that want to use their API to help them collect information on psychological characteristics based on Big Five Personality without inconveniencing the participants with personality questionnaires")
+	
+- The features used are differentiated for each learning implementation. If the features are different between each model, it is not fair to compare the classification results of each model, it will be biased whether the improvements is because of the learning model or because of the features being used.
+	(Thank you for the input, we will explore more in some references)
+	
+- It is not fair to cite only the highest accuracy in the abstract, the average accuracy will be more fair.
+	(DONE - page 1 abstract - from "The results succeeded to outperform the accuracy of previous similar research with the highest accuracy of 93.33%." to "The results succeeded to outperform the accuracy of previous similar research with the average accuracy of 74.17%.")
+	
+- Why does the EXT personality is easier to predict than other personalities. Please add the explanation in the result analysis.
+	(DONE - page 5 - by adding "From the average accuracy result based on traits, we can see Openness (OPN) has the highest average accuracy in myPersonality dataset, while Extraversion (EXT) has the highest average accuracy in manual gathered dataset. This result may be different in other research, as it heavily depends on the dataset and the classification model with its features that being used for the prediction")
